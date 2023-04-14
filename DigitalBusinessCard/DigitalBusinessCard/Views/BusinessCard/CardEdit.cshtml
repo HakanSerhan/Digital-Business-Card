@@ -1,0 +1,1134 @@
+﻿@model DigitalBusinessCard.Models.Classes.BusinessCard
+
+@{
+    ViewBag.Title = "CardEdit";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="~/Content/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css">
+</head>
+
+<style>
+  .checkbox-wrapper-12 {
+    position: relative;
+  }
+  .checkbox-wrapper-12 > svg {
+    position: absolute;
+    top: -130%;
+    left: -170%;
+    width: 110px;
+    pointer-events: none;
+  }
+  .checkbox-wrapper-12 * {
+    box-sizing: border-box;
+  }
+  .checkbox-wrapper-12 input[type="checkbox"] {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    -webkit-tap-highlight-color: transparent;
+    cursor: pointer;
+    margin: 0;
+  }
+  .checkbox-wrapper-12 input[type="checkbox"]:focus {
+    outline: 0;
+  }
+  .checkbox-wrapper-12 .cbx {
+    width: 24px;
+    height: 24px;
+    top: calc(50vh - 12px);
+    left: calc(50vw - 12px);
+  }
+  .checkbox-wrapper-12 .cbx input {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 24px;
+    height: 24px;
+    border: 2px solid #bfbfc0;
+    border-radius: 50%;
+  }
+  .checkbox-wrapper-12 .cbx label {
+    width: 24px;
+    height: 24px;
+    background: none;
+    border-radius: 50%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    -webkit-filter: url("#goo-12");
+    filter: url("#goo-12");
+    transform: trasnlate3d(0, 0, 0);
+    pointer-events: none;
+  }
+  .checkbox-wrapper-12 .cbx svg {
+    position: absolute;
+    top: 5px;
+    left: 4px;
+    z-index: 1;
+    pointer-events: none;
+  }
+  .checkbox-wrapper-12 .cbx svg path {
+    stroke: #fff;
+    stroke-width: 3;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+    stroke-dasharray: 19;
+    stroke-dashoffset: 19;
+    transition: stroke-dashoffset 0.3s ease;
+    transition-delay: 0.2s;
+  }
+  .checkbox-wrapper-12 .cbx input:checked + label {
+    animation: splash-12 0.6s ease forwards;
+  }
+  .checkbox-wrapper-12 .cbx input:checked + label + svg path {
+    stroke-dashoffset: 0;
+  }
+  @@-moz-keyframes splash-12 {
+    40% {
+      background: #866efb;
+      box-shadow: 0 -18px 0 -8px #866efb, 16px -8px 0 -8px #866efb, 16px 8px 0 -8px #866efb, 0 18px 0 -8px #866efb, -16px 8px 0 -8px #866efb, -16px -8px 0 -8px #866efb;
+    }
+    100% {
+      background: #866efb;
+      box-shadow: 0 -36px 0 -10px transparent, 32px -16px 0 -10px transparent, 32px 16px 0 -10px transparent, 0 36px 0 -10px transparent, -32px 16px 0 -10px transparent, -32px -16px 0 -10px transparent;
+    }
+  }
+  @@-webkit-keyframes splash-12 {
+    40% {
+      background: #866efb;
+      box-shadow: 0 -18px 0 -8px #866efb, 16px -8px 0 -8px #866efb, 16px 8px 0 -8px #866efb, 0 18px 0 -8px #866efb, -16px 8px 0 -8px #866efb, -16px -8px 0 -8px #866efb;
+    }
+    100% {
+      background: #866efb;
+      box-shadow: 0 -36px 0 -10px transparent, 32px -16px 0 -10px transparent, 32px 16px 0 -10px transparent, 0 36px 0 -10px transparent, -32px 16px 0 -10px transparent, -32px -16px 0 -10px transparent;
+    }
+  }
+  @@-o-keyframes splash-12 {
+    40% {
+      background: #866efb;
+      box-shadow: 0 -18px 0 -8px #866efb, 16px -8px 0 -8px #866efb, 16px 8px 0 -8px #866efb, 0 18px 0 -8px #866efb, -16px 8px 0 -8px #866efb, -16px -8px 0 -8px #866efb;
+    }
+    100% {
+      background: #866efb;
+      box-shadow: 0 -36px 0 -10px transparent, 32px -16px 0 -10px transparent, 32px 16px 0 -10px transparent, 0 36px 0 -10px transparent, -32px 16px 0 -10px transparent, -32px -16px 0 -10px transparent;
+    }
+  }
+  @@keyframes splash-12 {
+    40% {
+      background: #866efb;
+      box-shadow: 0 -18px 0 -8px #866efb, 16px -8px 0 -8px #866efb, 16px 8px 0 -8px #866efb, 0 18px 0 -8px #866efb, -16px 8px 0 -8px #866efb, -16px -8px 0 -8px #866efb;
+    }
+    100% {
+      background: #866efb;
+      box-shadow: 0 -36px 0 -10px transparent, 32px -16px 0 -10px transparent, 32px 16px 0 -10px transparent, 0 36px 0 -10px transparent, -32px 16px 0 -10px transparent, -32px -16px 0 -10px transparent;
+    }
+  }
+</style>
+
+<body>
+
+    @if (ViewBag.urn == ViewBag.nagme || User.IsInRole("SuperAdmin") || User.IsInRole("Admin"))
+    {
+
+
+
+
+        <div id="editdiv">
+            @using (Html.BeginForm("CardUpdate", "BusinessCard", FormMethod.Post, new { enctype = "multipart/form-data" }))
+            {
+                @Html.HiddenFor(x => x.CardID)
+                <br />
+
+                <div class="modal" id="Modal1">
+                    <div class="modal-dialog">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <h2 class="modal-title"> E-Mail </h2>
+                            </div>
+                            <div class="modal-body">
+
+                                <div class="row">
+                                    <div class="col col-sm-6 ">
+                                        <label>Email</label>
+                                        @Html.TextBoxFor(x => x.Email, new { @class = "form-control" })
+
+
+                                    </div>
+                                    <div class="col col-sm-4" style="text-align:center">
+                                        <label>Show On Profile</label>
+                                        @Html.CheckBoxFor(x => x.ShowEmail, new { @class = "form-control" })
+                                    </div>
+                                </div>
+                                <br />
+                                <button class="btn btn-outline-success" style="width:100%">Confirm</button>
+                                <br />
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="modal" id="Modal2">
+                    <div class="modal-dialog">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <h2 class="modal-title"> Phone Number </h2>
+                            </div>
+                            <div class="modal-body">
+
+                                <div class="row">
+                                    <div class="col col-sm-6">
+                                        <label>Phone</label>
+                                        @Html.TextBoxFor(x => x.PhoneNumber, new { @class = "form-control", placeholder = "+90********" })
+
+
+                                    </div>
+                                    <div class="col col-sm-4" style="text-align:center">
+                                        <label>Show On Profile</label>
+                                        @Html.CheckBoxFor(x => x.ShowPhoneNumbere, new { @class = "form-control" })
+                                    </div>
+                                </div>
+                                <br />
+                                <button class="btn btn-outline-success" style="width:100%">Confirm</button>
+                                <br />
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="modal" id="Modal3" >
+                    <div class="modal-dialog" id="modelboy">
+                        <div class="modal-content" >
+                            <div class="modal-header">
+                                <h2 class="modal-title" > WhatsApp </h2>
+                            </div>
+                            <div class="modal-body">
+
+
+
+                                <div class="row">
+                                    <div class="col ">
+                                        <label>Phone Number</label>
+                                        @Html.TextBoxFor(x => x.Whatsapp, new { @class = "form-control" })
+
+
+                                    </div>
+                                    <div class="col col-sm-1" >
+                                        <label style="visibility:hidden">a</label>
+                                        <div class="checkbox-wrapper-12" style="margin-top:1vh">
+                                            <div class="cbx">
+                                                <input checked="checked" class="form-control" data-val="true" data-val-required="ShowWhatsapp alanı gereklidir." id="ShowWhatsapp" name="ShowWhatsapp" type="checkbox" value="true">
+                                                <label for="cbx-12"></label>
+                                                <svg width="15" height="14" viewbox="0 0 15 14" fill="none">
+                                                    <path d="M2 8.36364L6.23077 12L13 2"></path>
+                                                </svg>
+                                            </div>
+                                            <!-- Gooey-->
+                                            <svg xmlns="http://www.w3.org/2000/svg" version="1.1">
+                                                <defs>
+                                                    <filter id="goo-12">
+                                                        <fegaussianblur in="SourceGraphic" stddeviation="4" result="blur"></fegaussianblur>
+                                                        <fecolormatrix in="blur" mode="matrix" values="1 0 0 0 0  0 1 0 0 0  0 0 1 0 0  0 0 0 22 -7" result="goo-12"></fecolormatrix>
+                                                        <feblend in="SourceGraphic" in2="goo-12"></feblend>
+                                                    </filter>
+                                                </defs>
+                                            </svg>
+                                        </div>
+                                    </div>
+                                </div>
+                                <br />
+                                <button class="btn btn-outline-success" style="width:100%">Confirm</button>
+                                <br />
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="modal" id="Modal4">
+                    <div class="modal-dialog">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <h2 class="modal-title"> Link </h2>
+                            </div>
+                            <div class="modal-body">
+                                <div class="row">
+                                    <div class="col col-sm-6">
+                                        <label>Link</label>
+                                        @Html.TextBoxFor(x => x.Link, new { @class = "form-control" })
+
+
+                                    </div>
+                                    <div class="col col-sm-4" style="text-align:center">
+                                        <label>Show On Profile</label>
+                                        @Html.CheckBoxFor(x => x.ShowLink, new { @class = "form-control" })
+                                    </div>
+                                </div>
+                                <br />
+                                <button class="btn btn-outline-success" style="width:100%">Confirm</button>
+                                <br />
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="modal" id="Modal5">
+                    <div class="modal-dialog">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <h2 class="modal-title"> Adress </h2>
+                            </div>
+                            <div class="modal-body">
+
+
+                                <div class="row">
+                                    <div class="col col-sm-6">
+                                        <label>Adress</label>
+                                        @Html.TextBoxFor(x => x.Adress, new { @class = "form-control" })
+
+
+                                    </div>
+                                    <div class="col col-sm-4" style="text-align:center">
+                                        <label>Show On Profile</label>
+                                        @Html.CheckBoxFor(x => x.ShowAdress, new { @class = "form-control" })
+                                    </div>
+                                </div>
+                                <br />
+                                <button class="btn btn-outline-success" style="width:100%">Confirm</button>
+                                <br />
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="modal" id="Modal6">
+                    <div class="modal-dialog">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <h2 class="modal-title"> Company Website </h2>
+                            </div>
+                            <div class="modal-body">
+
+                                <div class="row">
+                                    <div class="col col-sm-68">
+                                        <label>Company Website</label>
+                                        @Html.TextBoxFor(x => x.CompanyWebsite, new { @class = "form-control" })
+
+
+                                    </div>
+                                    <div class="col col-sm-4" style="text-align:center">
+                                        <label>Show On Profile</label>
+                                        @Html.CheckBoxFor(x => x.ShowCompanyWebsite, new { @class = "form-control" })
+                                    </div>
+                                </div>
+                                <br />
+                                <button class="btn btn-outline-success" style="width:100%">Confirm</button>
+                                <br />
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="modal" id="Modal7">
+                    <div class="modal-dialog">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <h2 class="modal-title"> LinkedIn </h2>
+                            </div>
+                            <div class="modal-body">
+
+                                <div class="row">
+                                    <div class="col col-sm-6">
+                                        <label>LinkedIn</label>
+                                        @Html.TextBoxFor(x => x.LinkedIn, new { @class = "form-control" })
+
+
+                                    </div>
+                                    <div class="col col-sm-4" style="text-align:center">
+                                        <label>Show On Profile</label>
+                                        @Html.CheckBoxFor(x => x.ShowLinkedIn, new { @class = "form-control" })
+                                    </div>
+                                </div>
+                                <br />
+                                <button class="btn btn-outline-success" style="width:100%">Confirm</button>
+                                <br />
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="modal" id="Modal8">
+                    <div class="modal-dialog">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <h2 class="modal-title"> Instagram </h2>
+                            </div>
+                            <div class="modal-body">
+
+
+
+
+
+                                <div class="row">
+                                    <div class="col col-sm-6">
+                                        <label>Instagram</label>
+                                        @Html.TextBoxFor(x => x.Instagram, new { @class = "form-control" })
+
+
+                                    </div>
+                                    <div class="col col-sm-4" style="text-align:center">
+                                        <label>Show On Profile</label>
+                                        @Html.CheckBoxFor(x => x.ShowInstagram, new { @class = "form-control" })
+                                    </div>
+                                </div>
+                                <br />
+                                <button class="btn btn-outline-success" style="width:100%">Confirm</button>
+                                <br />
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="modal" id="Modal9">
+                    <div class="modal-dialog">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <h2 class="modal-title"> Calendly </h2>
+                            </div>
+                            <div class="modal-body">
+
+                                <div class="row">
+                                    <div class="col col-sm-6">
+                                        <label>Calendly</label>
+                                        @Html.TextBoxFor(x => x.Calendly, new { @class = "form-control" })
+
+
+                                    </div>
+                                    <div class="col col-sm-4" style="text-align:center">
+                                        <label>Show On Profile</label>
+                                        @Html.CheckBoxFor(x => x.ShowCalendly, new { @class = "form-control" })
+                                    </div>
+                                </div>                            <br />
+                                <button class="btn btn-outline-success" style="width:100%">Confirm</button>
+                                <br />
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="modal" id="Modal10">
+                    <div class="modal-dialog">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <h2 class="modal-title"> Twitter </h2>
+                            </div>
+                            <div class="modal-body">
+
+                                <div class="row">
+                                    <div class="col col-sm-6">
+                                        <label>Twitter</label>
+                                        @Html.TextBoxFor(x => x.Twitter, new { @class = "form-control" })
+
+
+                                    </div>
+                                    <div class="col col-sm-4" style="text-align:center">
+                                        <label>Show On Profile</label>
+                                        @Html.CheckBoxFor(x => x.ShowTwitter, new { @class = "form-control" })
+                                    </div>
+                                </div>                      <br />
+                                <button class="btn btn-outline-success" style="width:100%">Confirm</button>
+                                <br />
+                            </div>
+                        </div>
+                    </div>
+                </div> <div class="modal" id="Modal11">
+                    <div class="modal-dialog">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <h2 class="modal-title"> Facebook </h2>
+                            </div>
+                            <div class="modal-body">
+
+
+
+
+                                <div class="row">
+                                    <div class="col col-sm-6">
+                                        <label>Facebook</label>
+                                        @Html.TextBoxFor(x => x.Facebook, new { @class = "form-control" })
+
+
+                                    </div>
+                                    <div class="col col-sm-4" style="text-align:center">
+                                        <label>Show On Profile</label>
+                                        @Html.CheckBoxFor(x => x.ShowFacebook, new { @class = "form-control" })
+                                    </div>
+                                </div>
+                            </div>                            <br />
+                            <button class="btn btn-outline-success" style="width:100%">Confirm</button>
+                            <br />
+                        </div>
+                    </div>
+                </div>
+                <div class="modal" id="Modal12">
+                    <div class="modal-dialog">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <h2 class="modal-title"> Snapchat </h2>
+                            </div>
+                            <div class="modal-body">
+
+
+
+
+                                <div class="row">
+                                    <div class="col col-sm-6">
+                                        <label>Snapchat</label>
+                                        @Html.TextBoxFor(x => x.Snapchat, new { @class = "form-control" })
+
+
+                                    </div>
+                                    <div class="col col-sm-4" style="text-align:center">
+                                        <label>Show On Profile</label>
+                                        @Html.CheckBoxFor(x => x.ShowSnapchat, new { @class = "form-control" })
+                                    </div>
+                                </div>              <br />
+                                <button class="btn btn-outline-success" style="width:100%">Confirm</button>
+                                <br />
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="modal" id="Modal13">
+                    <div class="modal-dialog">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <h2 class="modal-title"> Tiktok </h2>
+                            </div>
+                            <div class="modal-body">
+                                <div class="row">
+                                    <div class="col col-sm-6">
+                                        <label>Tiktok</label>
+                                        @Html.TextBoxFor(x => x.Tiktok, new { @class = "form-control" })
+
+
+                                    </div>
+                                    <div class="col col-sm-4" style="text-align:center">
+                                        <label>Show On Profile</label>
+                                        @Html.CheckBoxFor(x => x.ShowTiktok, new { @class = "form-control" })
+                                    </div>
+                                </div>       <br />
+                                <button class="btn btn-outline-success" style="width:100%">Confirm</button>
+                                <br />
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="modal" id="Modal14">
+                    <div class="modal-dialog">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <h2 class="modal-title"> Youtube </h2>
+                            </div>
+                            <div class="modal-body">
+
+
+
+                                <div class="row">
+                                    <div class="col col-sm-6">
+                                        <label>Youtube</label>
+                                        @Html.TextBoxFor(x => x.Youtube, new { @class = "form-control" })
+
+
+                                    </div>
+                                    <div class="col col-sm-4" style="text-align:center">
+                                        <label>Show On Profile</label>
+                                        @Html.CheckBoxFor(x => x.ShowYoutube, new { @class = "form-control" })
+                                    </div>
+                                </div>         <br />
+                                <button class="btn btn-outline-success" style="width:100%">Confirm</button>
+                                <br />
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="modal" id="Modal15">
+                    <div class="modal-dialog">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <h2 class="modal-title"> GitHub </h2>
+                            </div>
+                            <div class="modal-body">
+
+
+                                <div class="row">
+                                    <div class="col col-sm-6">
+                                        <label>Github</label>
+                                        @Html.TextBoxFor(x => x.Github, new { @class = "form-control" })
+
+
+                                    </div>
+                                    <div class="col col-sm-4" style="text-align:center">
+                                        <label>Show On Profile</label>
+                                        @Html.CheckBoxFor(x => x.ShowGithub, new { @class = "form-control" })
+                                    </div>
+                                </div>   <br />
+                                <button class="btn btn-outline-success" style="width:100%">Confirm</button>
+                                <br />
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="modal" id="Modal16">
+                    <div class="modal-dialog">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <h2 class="modal-title"> Yelp </h2>
+                            </div>
+                            <div class="modal-body">
+                                <div class="row">
+                                    <div class="col col-sm-6">
+                                        <label>Yelp</label>
+                                        @Html.TextBoxFor(x => x.Yelp, new { @class = "form-control" })
+
+
+                                    </div>
+                                    <div class="col col-sm-4" style="text-align:center">
+                                        <label>Show On Profile</label>
+                                        @Html.CheckBoxFor(x => x.ShowYelp, new { @class = "form-control" })
+                                    </div>
+                                </div> <br />
+                                <button class="btn btn-outline-success" style="width:100%">Confirm</button>
+                                <br />
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="modal" id="Modal17">
+                    <div class="modal-dialog">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <h2 class="modal-title"> Venmo </h2>
+                            </div>
+                            <div class="modal-body">
+                                <div class="row">
+                                    <div class="col col-sm-6">
+                                        <label>Venmo</label>
+                                        @Html.TextBoxFor(x => x.Venmo, new { @class = "form-control" })
+
+
+                                    </div>
+                                    <div class="col col-sm-4" style="text-align:center">
+                                        <label>Show On Profile</label>
+                                        @Html.CheckBoxFor(x => x.ShowVenmo, new { @class = "form-control" })
+                                    </div>
+                                </div> <br />
+                                <button class="btn btn-outline-success" style="width:100%">Confirm</button>
+                                <br />
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="modal" id="Modal18">
+                    <div class="modal-dialog">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <h2 class="modal-title"> Paypal </h2>
+                            </div>
+                            <div class="modal-body">
+
+                                <div class="row">
+                                    <div class="col col-sm-6">
+                                        <label>Paypal</label>
+                                        @Html.TextBoxFor(x => x.Paypal, new { @class = "form-control" })
+
+
+                                    </div>
+                                    <div class="col col-sm-4" style="text-align:center">
+                                        <label>Show On Profile</label>
+                                        @Html.CheckBoxFor(x => x.ShowPaypal, new { @class = "form-control" })
+                                    </div>
+                                </div> <br />
+                                <button class="btn btn-outline-success" style="width:100%">Confirm</button>
+                                <br />
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="modal" id="Modal19">
+                    <div class="modal-dialog">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <h2 class="modal-title"> Cashapp </h2>
+                            </div>
+                            <div class="modal-body">
+
+
+                                <div class="row">
+                                    <div class="col col-sm-6">
+                                        <label>Cashapp  </label>
+                                        @Html.TextBoxFor(x => x.CashApp, new { @class = "form-control" })
+
+
+                                    </div>
+                                    <div class="col col-sm-4" style="text-align:center">
+                                        <label>Show On Profile</label>
+                                        @Html.CheckBoxFor(x => x.ShowCashApp, new { @class = "form-control" })
+                                    </div>
+                                </div><br />
+                                <button class="btn btn-outline-success" style="width:100%">Confirm</button>
+                                <br />
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="modal" id="Modal20">
+                    <div class="modal-dialog">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <h2 class="modal-title"> Discord </h2>
+                            </div>
+                            <div class="modal-body">
+
+                                <div class="row">
+                                    <div class="col col-sm-6">
+                                        <label>Discord</label>
+                                        @Html.TextBoxFor(x => x.Discord, new { @class = "form-control" })
+
+
+                                    </div>
+                                    <div class="col col-sm-4" style="text-align:center">
+                                        <label>Show On Profile</label>
+                                        @Html.CheckBoxFor(x => x.ShowDiscord, new { @class = "form-control" })
+                                    </div>
+                                </div><br />
+                                <button class="btn btn-outline-success" style="width:100%">Confirm</button>
+                                <br />
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="modal" id="Modal21">
+                    <div class="modal-dialog">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <h2 class="modal-title"> Skype </h2>
+                            </div>
+                            <div class="modal-body">
+
+                                <div class="row">
+                                    <div class="col col-sm-6">
+                                        <label>Skype</label>
+                                        @Html.TextBoxFor(x => x.Skype, new { @class = "form-control" })
+
+
+                                    </div>
+                                    <div class="col col-sm-4" style="text-align:center">
+                                        <label>Show On Profile</label>
+                                        @Html.CheckBoxFor(x => x.ShowSkype, new { @class = "form-control" })
+                                    </div>
+                                </div> <br />
+                                <button class="btn btn-outline-success" style="width:100%">Confirm</button>
+                                <br />
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="modal" id="Modal22">
+                    <div class="modal-dialog">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <h2 class="modal-title"> Signal </h2>
+                            </div>
+                            <div class="modal-body">
+
+
+
+                                <div class="row">
+                                    <div class="col col-sm-6">
+                                        <label>Signal</label>
+                                        @Html.TextBoxFor(x => x.Signal, new { @class = "form-control" })
+
+
+                                    </div>
+                                    <div class="col col-sm-4" style="text-align:center">
+                                        <label>Show On Profile</label>
+                                        @Html.CheckBoxFor(x => x.ShowSignal, new { @class = "form-control" })
+                                    </div>
+                                </div> <br />
+                                <button class="btn btn-outline-success" style="width:100%">Confirm</button>
+                                <br />
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="modal" id="Modal23">
+                    <div class="modal-dialog">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <h2 class="modal-title"> Telegram </h2>
+                            </div>
+                            <div class="modal-body">
+
+                                <div class="row">
+                                    <div class="col col-sm-6">
+                                        <label>Telegram</label>
+                                        @Html.TextBoxFor(x => x.Telegram, new { @class = "form-control" })
+
+
+                                    </div>
+                                    <div class="col col-sm-4" style="text-align:center">
+                                        <label>Show On Profile</label>
+                                        @Html.CheckBoxFor(x => x.ShowTelegram, new { @class = "form-control" })
+                                    </div>
+                                </div><br />
+                                <button class="btn btn-outline-success" style="width:100%">Confirm</button>
+                                <br />
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="modal" id="Modal24">
+                    <div class="modal-dialog">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <h2 class="modal-title"> Twitch </h2>
+                            </div>
+                            <div class="modal-body">
+
+                                <div class="row">
+                                    <div class="col col-sm-6">
+                                        <label>Twitch</label>
+                                        @Html.TextBoxFor(x => x.Twitch, new { @class = "form-control" })
+
+
+                                    </div>
+                                    <div class="col col-sm-4" style="text-align:center">
+                                        <label>Show On Profile</label>
+                                        @Html.CheckBoxFor(x => x.ShowTwitch, new { @class = "form-control" })
+                                    </div>
+                                </div><br />
+                                <button class="btn btn-outline-success" style="width:100%">Confirm</button>
+                                <br />
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="modal" id="Modal25">
+                    <div class="modal-dialog">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <h2 class="modal-title"> Viber </h2>
+                            </div>
+                            <div class="modal-body">
+
+                                <div class="row">
+                                    <div class="col col-sm-6">
+                                        <label>Viber</label>
+                                        @Html.TextBoxFor(x => x.Viber, new { @class = "form-control" })
+
+
+                                    </div>
+                                    <div class="col col-sm-4" style="text-align:center">
+                                        <label>Show On Profile</label>
+                                        @Html.CheckBoxFor(x => x.ShowViber, new { @class = "form-control" })
+                                    </div>
+                                </div><br />
+                                <button class="btn btn-outline-success" style="width:100%">Confirm</button>
+                                <br />
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="modal" id="Modal26">
+                    <div class="modal-dialog">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <h2 class="modal-title"> Wechat </h2>
+                            </div>
+                            <div class="modal-body">
+
+                                <div class="row">
+                                    <div class="col col-sm-6">
+                                        <label>WeChat</label>
+                                        @Html.TextBoxFor(x => x.Wechat, new { @class = "form-control" })
+
+
+                                    </div>
+                                    <div class="col col-sm-4" style="text-align:center">
+                                        <label>Show On Profile</label>
+                                        @Html.CheckBoxFor(x => x.ShowWechat, new { @class = "form-control" })
+                                    </div>
+                                </div><br />
+                                <button class="btn btn-outline-success" style="width:100%">Confirm</button>
+                                <br />
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="modal" id="Modal27">
+                    <div class="modal-dialog">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <h2 class="modal-title"> Bitcoin </h2>
+                            </div>
+                            <div class="modal-body">
+
+                                <div class="row">
+                                    <div class="col col-sm-6">
+                                        <label>Bitcoin</label>
+                                        @Html.TextBoxFor(x => x.Bitcoin, new { @class = "form-control" })
+
+
+                                    </div>
+                                    <div class="col col-sm-4" style="text-align:center">
+                                        <label>Show On Profile</label>
+                                        @Html.CheckBoxFor(x => x.ShowBitcoin, new { @class = "form-control" })
+                                    </div>
+                                </div><br />
+                                <button class="btn btn-outline-success" style="width:100%">Confirm</button>
+                                <br />
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="modal" id="Modal28">
+                    <div class="modal-dialog">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <h2 class="modal-title"> Ethereum </h2>
+                            </div>
+                            <div class="modal-body">
+
+                                <div class="row">
+                                    <div class="col col-sm-6">
+                                        <label>Ethereum</label>
+                                        @Html.TextBoxFor(x => x.Ethereum, new { @class = "form-control" })
+
+
+                                    </div>
+                                    <div class="col col-sm-4" style="text-align:center">
+                                        <label>Show On Profile</label>
+                                        @Html.CheckBoxFor(x => x.ShowEthereum, new { @class = "form-control" })
+                                    </div>
+                                </div><br />
+                                <button class="btn btn-outline-success" style="width:100%">Confirm</button>
+                                <br />
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="modal" id="Modal29">
+                    <div class="modal-dialog">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <h2 class="modal-title"> Crypto Wallet </h2>
+                            </div>
+                            <div class="modal-body">
+
+                                <div class="row">
+                                    <div class="col col-sm-6">
+                                        <label>Wallet No</label>
+                                        @Html.TextBoxFor(x => x.Crypto, new { @class = "form-control" })
+
+
+                                    </div>
+                                    <div class="col col-sm-4" style="text-align:center">
+                                        <label>Show On Profile</label>
+                                        @Html.CheckBoxFor(x => x.ShowCrypto, new { @class = "form-control" })
+                                    </div>
+                                </div><br />
+                                <button class="btn btn-outline-success" style="width:100%">Confirm</button>
+                                <br />
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="modal" id="Modal30">
+                    <div class="modal-dialog">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <h2 class="modal-title"> IBAN </h2>
+                            </div>
+                            <div class="modal-body">
+
+                                <div class="row">
+                                    <div class="col col-sm-6">
+                                        <label>IBAN</label>
+                                        @Html.TextBoxFor(x => x.IBAN, new { @class = "form-control" })
+
+
+                                    </div>
+                                    <div class="col col-sm-4" style="text-align:center">
+                                        <label>Show On Profile</label>
+                                        @Html.CheckBoxFor(x => x.ShowIBAN, new { @class = "form-control" })
+                                    </div>
+                                </div><br />
+                                <button class="btn btn-outline-success" style="width:100%">Confirm</button>
+                                <br />
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <h1 style="text-align:center;font-weight:600">My Card</h1>
+                <br />
+                if (ViewBag.photo == null)
+                {
+                    <div class="row" style="text-align:center">
+                        <div class="col">
+                            <img src="~/Content/images/prof.png" id="editfoto" /><br /><br />
+                            <input type='file' name="ProfilePhoto" style="width:25%">
+                        </div>
+                    </div>
+                }
+                else
+                {
+                    <div class="row" style="text-align:center">
+                        <div class="col">
+                            <img src="@ViewBag.photo" id="editfoto" /><br /><br />
+                            <input type='file' name="ProfilePhoto" style="width:25%">
+                        </div>
+                    </div>
+                }
+
+                <br />
+
+                <div class="row">
+                    <div class="col ">
+                        <label>Name</label>
+                        @Html.TextBoxFor(x => x.Name, new { @class = "form-control" })
+                    </div>
+                    <div class="col">
+                        <label>Surname</label>
+                        @Html.TextBoxFor(x => x.Surname, new { @class = "form-control" })
+                    </div>
+                </div>
+                <br />
+                <div class="row">
+                    <div class="col ">
+                        <label>Title</label>
+                        @Html.TextBoxFor(x => x.Title, new { @class = "form-control" })
+                    </div>
+                    <div class="col">
+                        <label>Company</label>
+                        @Html.TextBoxFor(x => x.Company, new { @class = "form-control" })
+                    </div>
+                </div>
+                <br />
+                <h3 style="font-weight:600;text-align:center;">Communication</h3>
+                <div id="gridBox2">
+
+                    <div id="box2">
+                        <button type="button" id="editCard" data-toggle="modal" data-target="#Modal1"> <img src="~/Content/images/email.png" /></button>
+
+                    </div>
+                    <div id="box2">
+                        <button type="button" id="editCard" data-toggle="modal" data-target="#Modal2"> <img src="~/Content/images/phone.png" /></button>
+                    </div>
+                    <div id="box2">
+                        <button type="button" id="editCard" data-toggle="modal" data-target="#Modal3"> <img src="~/Content/images/whatsapp.png" /></button>
+                    </div>
+                    <div id="box2">
+                        <button type="button" id="editCard" data-toggle="modal" data-target="#Modal4"> <img src="~/Content/images/link.png" /></button>
+                    </div>
+                    <div id="box2">
+                        <button type="button" id="editCard" data-toggle="modal" data-target="#Modal5"> <img src="~/Content/images/adress.png" /></button>
+                    </div>
+                    <div id="box2">
+                        <button type="button" id="editCard" data-toggle="modal" data-target="#Modal6"> <img src="~/Content/images/company.png" /></button>
+                    </div>    <div id="box2">
+                        <button type="button" id="editCard" data-toggle="modal" data-target="#Modal7"> <img src="~/Content/images/linked.png" /></button>
+                    </div>
+
+                    <div id="box2">
+                        <button type="button" id="editCard" data-toggle="modal" data-target="#Modal9"> <img src="~/Content/images/calendly.png" /></button>
+                    </div>
+
+                    <div id="box2">
+                        <button type="button" id="editCard" data-toggle="modal" data-target="#Modal15"> <img src="~/Content/images/github.png" /></button>
+                    </div>
+                    <div id="box2">
+                        <button type="button" id="editCard" data-toggle="modal" data-target="#Modal17"> <img src="~/Content/images/venmo.png" /></button>
+                    </div>
+
+                    <div id="box2">
+                        <button type="button" id="editCard" data-toggle="modal" data-target="#Modal20"> <img src="~/Content/images/discord.png" /></button>
+                    </div>
+                    <div id="box2">
+                        <button type="button" id="editCard" data-toggle="modal" data-target="#Modal21"> <img src="~/Content/images/skype.png" /></button>
+                    </div><div id="box2">
+                        <button type="button" id="editCard" data-toggle="modal" data-target="#Modal22"> <img src="~/Content/images/signal.png" /></button>
+                    </div>
+                    <div id="box2">
+                        <button type="button" id="editCard" data-toggle="modal" data-target="#Modal23"> <img src="~/Content/images/telegram.png" /></button>
+                    </div>
+
+                    <div id="box2">
+                        <button type="button" id="editCard" data-toggle="modal" data-target="#Modal25"> <img src="~/Content/images/viber.png" /></button>
+                    </div>
+                    <div id="box2">
+                        <button type="button" id="editCard" data-toggle="modal" data-target="#Modal26"> <img src="~/Content/images/wechat.png" /></button>
+                    </div>
+
+                </div>
+                <br />
+                <h3 style="font-weight:600;text-align:center;">Social Media</h3>
+
+                <div id="gridBox2">
+                    <div id="box2">
+                        <button type="button" id="editCard" data-toggle="modal" data-target="#Modal8"> <img src="~/Content/images/instagram.png" /></button>
+                    </div>
+                    <div id="box2">
+                        <button type="button" id="editCard" data-toggle="modal" data-target="#Modal10"> <img src="~/Content/images/twitter.png" /></button>
+                    </div>
+                    <div id="box2">
+                        <button type="button" id="editCard" data-toggle="modal" data-target="#Modal24"> <img src="~/Content/images/twitch.png" /></button>
+                    </div>
+
+                    <div id="box2">
+                        <button type="button" id="editCard" data-toggle="modal" data-target="#Modal11"> <img src="~/Content/images/facebook.png" /></button>
+                    </div>
+                    <div id="box2">
+                        <button type="button" id="editCard" data-toggle="modal" data-target="#Modal13"> <img src="~/Content/images/tiktok.png" /></button>
+                    </div>
+                    <div id="box2">
+                        <button type="button" id="editCard" data-toggle="modal" data-target="#Modal14"> <img src="~/Content/images/youtube.png" /></button>
+                    </div>
+                    <div id="box2">
+                        <button type="button" id="editCard" data-toggle="modal" data-target="#Modal12"> <img src="~/Content/images/snap.png" /></button>
+                    </div>
+                    <div id="box2">
+                        <button type="button" id="editCard" data-toggle="modal" data-target="#Modal16"> <img src="~/Content/images/yelp.png" /></button>
+                    </div>
+                </div>
+                <br />
+                <h3 style="font-weight:600;text-align:center;">Finance</h3>
+                <div id="gridBox2">
+                    <div id="box2">
+                        <button type="button" id="editCard" data-toggle="modal" data-target="#Modal18"> <img src="~/Content/images/paypal.png" /></button>
+                    </div><div id="box2">
+                        <button type="button" id="editCard" data-toggle="modal" data-target="#Modal19"> <img src="~/Content/images/Cashapp.png" /></button>
+                    </div>
+                    <div id="box2">
+                        <button type="button" id="editCard" data-toggle="modal" data-target="#Modal27"> <img src="~/Content/images/bitcoin.png" /></button>
+                    </div>
+                    <div id="box2">
+                        <button type="button" id="editCard" data-toggle="modal" data-target="#Modal28"> <img src="~/Content/images/eth.png" /></button>
+                    </div>
+                    <div id="box2">
+                        <button type="button" id="editCard" data-toggle="modal" data-target="#Modal29"> <img src="~/Content/images/crypto.png" /></button>
+                    </div><div id="box2">
+                        <button type="button" id="editCard" data-toggle="modal" data-target="#Modal30"> <img src="~/Content/images/iban.png" /></button>
+                    </div>
+                </div>
+
+
+                <br />
+                <button class="btn btn-outline-dark" style="width:100%; margin-bottom:2vh;">Save</button>
+            }
+
+            <div id="backgroundDiv" style="background-color: #F4F6F9 !important;"></div>
+        </div>
+    }
+    else
+    {
+        { Html.RenderPartial("Error"); }
+    }
+</body>

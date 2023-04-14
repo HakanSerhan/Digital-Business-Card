@@ -1,0 +1,33 @@
+﻿@model DigitalBusinessCard.Models.Classes.Users
+
+@{
+    ViewBag.Title = "EditUser";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h1>Edit User</h1>
+<br />
+<h3> @ViewBag.name </h3>
+<br />
+
+@using (Html.BeginForm("UpdateUser", "User", FormMethod.Post))
+{
+    
+    <label>Username</label>
+    @Html.TextBoxFor(x => x.UserName, new { @class = "form-control" })
+
+  
+    <label>E-Mail</label>
+    @Html.TextBoxFor(x => x.Email, new { @class = "form-control" })
+    <label>Activation Code</label>
+    @Html.TextBoxFor(x => x.Password, new { @class = "form-control" })
+
+    <label>User Role</label>
+    @Html.TextBoxFor(x => x.UserRole, new { @class = "form-control" })
+    <label>Verified</label>
+    @Html.CheckBoxFor(x => x.Verified, new { @class = "form-control" })
+    @Html.HiddenFor(x => x.UserID)
+
+    <br />
+    <button class="btn btn-outline-dark" style="width:100%;">Edit</button>
+}   

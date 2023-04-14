@@ -1,0 +1,196 @@
+﻿@model IEnumerable<DigitalBusinessCard.Models.Classes.Users>
+
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div class="modal" id="Modal1">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2 class="modal-title"> New User </h2>
+            </div>
+            <form method="post" action="/User/NewUser">
+                <div class="modal-body">
+                    <label>Username</label>
+                    @*@Html.TextBoxFor(x => x.UserName, new { @class = "form-control" })*@
+                    <input class="form-control" data-val="true" data-val-length="UserName alanı uzunluğu en fazla 80 olan bir dize olmalıdır." data-val-length-max="80" id="UserName" name="UserName" type="text" value="">
+                    <label>E-Mail</label>
+                    @*@Html.TextBoxFor(x => x.Email, new { @class = "form-control" })*@
+                    <input class="form-control" data-val="true" data-val-length="Email alanı uzunluğu en fazla 80 olan bir dize olmalıdır." data-val-length-max="80" id="Email" name="Email" type="text" value="">
+                    <label>Activation Code</label>
+                    @*@Html.TextBoxFor(x => x.Password, new { @class = "form-control" })*@
+                    <input class="form-control" data-val="true" data-val-length="Password alanı uzunluğu en fazla 80 olan bir dize olmalıdır." data-val-length-max="80" id="Password" name="Password" type="text" value="">
+                    <label>User Role</label>
+                    @*@Html.TextBoxFor(x => x.UserRole, new { @class = "form-control" })*@
+                    <input class="form-control" id="UserRole" name="UserRole" type="text" value="">
+                    <label>Verified</label>
+                    @*@Html.CheckBoxFor(x => x.Verified, new { @class = "form-control" })*@
+                    <input class="form-control" data-val="true" data-val-required="Verified alanı gereklidir." id="Verified" name="Verified" type="checkbox" value="true">
+
+                    <br />
+                    <button class="btn btn-outline-dark" style="width:100%;">Save</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+
+
+<body class="hold-transition sidebar-mini">
+    <div class="wrapper">
+        <section class="content">
+            <div class="container-fluid">
+                <div class="row">
+                    <div class="col-12">
+
+                        <div class="card">
+                            <div class="card-header">
+                                <button type="button" class="btn btn-outline-warning" data-toggle="modal" data-target="#Modal1">New User</button>
+                            </div>
+
+                            <div class="card-body">
+                                <table id="example1" class="table table-bordered table-striped">
+
+                                    <thead>
+                                        <tr>
+                                            <th>ID</th>
+                                            <th>Username</th>
+                                            <th>Email</th>
+                                            <th>Password</th>
+                                            <th>Verified </th>
+                                            <th>UserRole</th>
+                                            <th>Edit</th>
+                                            <th>Delete</th>
+                                            <th>Card Information</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+
+                                        @foreach (var k in ViewBag.users)
+                                        {
+
+                                            <tr>
+                                                <td>
+                                                    @k.UserID
+                                                </td>
+                                                <td>
+                                                    @k.UserName
+                                                </td>
+                                                <td>
+                                                    @k.Email
+                                                </td>
+                                                <td>
+                                                    @if (User.IsInRole("SuperAdmin"))
+                                                    {
+                                                        @k.Password
+                                                    }
+                                                    else if (User.IsInRole("Admin"))
+                                                    {
+                                                        <p>******</p>
+                                                    }
+                                                </td>
+                                                <td>
+                                                    @k.Verified
+                                                </td>
+                                                <td>@k.UserRole</td>
+
+                                                <td>
+
+                                                    @*<button type="button" class="btn btn-outline-warning" data-toggle="modal" data-target="#Modal2" onclick="passData(@k.UserID)">Ed.tttt</button>*@
+
+                                                    <a href="/User/EditUser/@k.UserID"
+                                                       class="btn btn-outline-secondary"> Edit  </a>
+                                                </td>
+                                                <td>
+                                                    <a href="/User/DeleteUser/@k.UserID"
+                                                       class="btn btn-outline-danger"> Delete  </a>
+                                                </td>
+                                                <td>
+                                                    <a href="/Card/@k.UserID"
+                                                       class="btn btn-outline-primary">Card Info</a>
+                                                </td>
+
+                                            </tr>
+
+                                        }
+                                    </tbody>
+                                </table>
+
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+        </section>
+    </div>
+</body>
+<script src="~/Content/plugins/jquery/jquery.min.js"></script>
+
+@*@Html.Action("Editblabla", new {id=1})*@
+
+@*<script>
+
+    function passData(id) {
+        if (Document) {
+              var model = @Html.Raw(Json.Encode(Model));
+            console.log(id);
+            for (var i = 0; i < model.Items.length; i++) {
+                console.log(id);
+            }
+        }
+
+
+    };
+
+
+</script>*@
+
+@*<div class="modal" id="Modal2">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h2 class="modal-title"> New User </h2>
+                </div>
+                <form method="post" action="/User/NewUser">
+                    <div class="modal-body">
+
+                        @using (Html.BeginForm("UpdateUser", "User", FormMethod.Post))
+                        {
+                            <label>Username</label>
+                          @Html.TextBoxFor(x => x.UserName, new { @class = "form-control", id = "nameModal" })
+                            <input class="form-control" data-val="true" data-val-length="UserName alanı uzunluğu en fazla 80 olan bir dize olmalıdır." data-val-length-max="80" id="nameModal" name="UserName" type="text" value="">
+
+                            <label>E-Mail</label>
+                            @Html.TextBoxFor(x => x.Email, new { @class = "form-control", id = "mailModal" })
+                            <input class="form-control" data-val="true" data-val-length="Email alanı uzunluğu en fazla 80 olan bir dize olmalıdır." data-val-length-max="80" id="mailModal" name="Email" type="text" value="">
+
+                            <label>Activation Code</label>
+                            @Html.TextBoxFor(x => x.Password, new { @class = "form-control", id = "passModal" })
+                            <input class="form-control" data-val="true" data-val-length="Password alanı uzunluğu en fazla 80 olan bir dize olmalıdır." data-val-length-max="80" id="passModal" name="Password" type="text" value="">
+
+                            <label>User Role</label>
+                            @Html.TextBoxFor(x => x.UserRole, new { id = "roleModal", @class = "form-control" })
+                            <input class="form-control" id="roleModal" name="UserRole" type="text" value="">
+
+                            <label>Verified</label>
+                            @Html.CheckBoxFor(x => x.Verified, new { @class = "form-control", id = "verifModal" })
+                            <input class="form-control" data-val="true" data-val-required="Verified alanı gereklidir." id="verifModal" name="Verified" type="checkbox" value="true">
+
+                            @Html.LabelFor(x => x.UserID, new { id = "idModal" })
+                            <label  for="UserID" class="UserID">UserID</label>
+
+                            <br />
+                            <button class="btn btn-outline-dark" style="width:100%;">Edit</button>
+                        }
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>*@

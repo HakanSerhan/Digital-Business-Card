@@ -1,0 +1,109 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  
+}
+
+body{
+    font-family: 'Poppins', sans-serif;
+    background: rgb(202, 190, 77);
+    
+}
+
+#navbar{
+    margin-top: 1%;
+    display: flex;
+    justify-content:space-evenly ;
+    font-family: sans-serif;
+    height: 3vh;
+    font-size: 15px;
+    color: #000000;
+    text-decoration: none;
+}
+
+#container {
+    position: absolute;
+    left: 12.5%;
+    top: 8%;
+    width: 75%;
+    height: 550px;
+    background: khaki;
+    background-size: cover;
+    background-position: center;
+}
+
+#container #content {
+   
+    top: 0;
+    left: 0;
+    width: 58%;
+    height: 100%;
+    background: transparent;
+    align-items: center;
+    color: #000000;        
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+}
+
+
+
+#container #logreg-box{
+    position: absolute;
+    top: 0;
+    right: 0;
+   width: calc(100% - 58%);
+   height: 100%;
+   background: rgb(218, 210, 139);;
+   backdrop-filter: blur(20px);
+  
+   align-items: center;
+   justify-content: center;
+   display: flex;
+    
+}
+
+#logreg-box p {
+    position: absolute;
+    bottom: 10%; 
+    color: rgb(0, 0, 0);
+    font-size: 100%;
+    width: 100px;
+    font-style: sans-serif;
+}
+
+#content .logo {
+    font-size: 30px;
+    margin-bottom:7%;
+    width:60%;
+}
+
+.text-sci h2{
+    font-size: 40px;
+    line-height: 1;
+}
+
+.text-sci h2 span{
+    font-size: 25px;
+}
+
+.text-sci p{
+    font-size: 16px;
+    margin: 20px 0;
+  
+    
+}
+
+#social a i{
+    font-size: 22px;
+    color: #000000;
+    margin-right: 10px;
+    transition: .5s ease;
+    
+    
+}
+
+#social a:hover i{
+    transform: scale(1.2);
+}

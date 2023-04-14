@@ -1,0 +1,244 @@
+*{margin: 0; padding: 0;} 
+
+body{
+    font-family: 'Roboto', sans-serif;
+    height: 100%;
+    color: black;
+    line-height: 1.5;
+}
+
+#NavBar{
+    margin-top: 1%;
+    display: flex;
+    justify-content:space-evenly ;
+    font-family: sans-serif;
+    height: 3vh;
+    font-size: 15px;
+    color: #0c0c0c;
+    text-decoration: none;
+}
+ 
+#PersonelInfo {
+    text-align: center;
+    margin: 3%;
+}
+
+#PersonelInfo p {
+    display: block;
+    margin-block-start: 1em;
+    text-align: left;
+    margin-left: 32%;
+    color: #0e0d0d;
+}
+
+body{
+    height: 100vh;
+    background-size: cover;
+    background-repeat: no-repeat;
+}   
+
+#PersonelInfo img{
+width: 37%;
+height: 300px;
+-webkit-box-shadow: 1px 11px 19px 0px rgba(145,132,145,1);
+-moz-box-shadow: 1px 11px 19px 0px rgba(145,132,145,1);
+box-shadow: 1px 11px 19px 0px rgba(145,132,145,1);
+}
+@media only screen and (max-width: 480px) {
+    #PersonelInfo img{
+        width: 100%;
+        height: 300px;
+        }
+
+        
+#PersonelInfo p {
+    display: block;
+    margin-block-start: 1em;
+    text-align: left;
+    margin-left: 1%;
+   
+}
+#box1 img{
+    width: 100%;
+
+}
+
+}
+#gridBox{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-row-gap: 15%;
+    width: 50%;
+    margin-left: auto;
+    margin-right: auto;
+ 
+}
+
+#box1 img{
+    width:  20%;
+    border-radius: 15px;
+}
+#name{
+    font-weight: 600;
+    font-size: 28px;
+}
+#box1{
+    text-align: center;
+}
+@media only screen and (max-width: 480px) {
+
+#box1 img{
+    width: 45%;
+}
+
+#gridBox{
+    margin-top: 6%;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    width: 100%;
+    margin-left: auto;
+    margin-right: auto;
+ 
+}
+
+
+}
+#box1 {
+    text-align: center;
+}
+
+#gridBox2 {
+    row-gap:6vh;
+    margin-top: 6%;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    width: 100%;
+    margin-left: auto;
+    margin-right: auto;
+}
+@media only screen and (max-width: 480px) {
+
+    #box2 img {
+        width: 85%;
+    }
+
+    #gridBox2 {
+        margin-top: 6%;
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr;
+        width: 100%;
+        margin-left: auto;
+        margin-right: auto;
+    }
+}
+#box2 img {
+    width: 30%;
+    border-radius: 15px;
+}
+#box2 {
+    text-align: center;
+}
+
+#backgroundDiv{
+    background-size: cover;
+    background-color: white;
+    background-repeat: no-repeat;
+    height: 100vh;
+    opacity: 1;
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    top: 0px ;
+    left: 0px ;
+    z-index: -5;
+}
+
+#editButton {
+    width:35%
+}
+@media only screen and (max-width: 480px) {
+
+    #editButton {
+        width: 90%
+    }
+   
+}
+#pp {
+    position: absolute;
+    align-self: center;
+    transform: scale(0.55);
+    width: 27% !important;
+    height: 50vh !important;
+}
+
+#profileDiv {
+    align-content: center;
+    display: flex;
+    justify-content: center
+}
+
+@media only screen and (max-width: 480px) {
+    #pp {
+        transform: scale(0.95);
+        width: 57% !important;
+        height: 20% !important;
+    }
+}
+
+
+#editdiv {
+    margin-left:auto;
+    margin-right:auto;
+
+    margin-top: 20px;
+    width: 60%;
+}
+@media only screen and (max-width: 480px) {
+
+    #editdiv {
+        margin-left: auto;
+        margin-right: auto;
+        margin-top: 20px;
+        width: 100%;
+    }
+}
+
+#editCard{
+    border:none;
+    padding:0;
+    background-color:transparent;
+}
+#editCard img{
+    padding:0
+}
+
+
+#editfoto {
+    width: 60%;
+    border-radius: 20px;
+    -webkit-box-shadow: 1px 5px 14px 7px rgba(201,195,201,1);
+    -moz-box-shadow: 1px 5px 14px 7px rgba(201,195,201,1);
+    box-shadow: 1px 5px 14px 7px rgba(201,195,201,1);
+}
+
+@media only screen and (max-width: 580px) {
+
+
+    #editfoto {
+        width: 100%;
+        -webkit-box-shadow: 0px 7px 14px 6px rgba(201,195,201,1);
+        -moz-box-shadow: 0px 7px 14px 6px rgba(201,195,201,1);
+        box-shadow: 0px 7px 14px 6px rgba(201,195,201,1);
+    }
+}
+
+#modelboy {
+   width:35%
+}
+@media only screen and (max-width: 580px) {
+
+
+    #modelboy {
+        width: 95%
+    }
+}

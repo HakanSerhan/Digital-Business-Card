@@ -12,6 +12,17 @@
     <link rel="stylesheet" href="~/Content/style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css">
 </head>
+<style>
+   /* a {
+        color: rgb(40,76,28) !important
+    }
+    p {
+        color: rgb(40,76,28) !important
+    }
+    button {
+        color: rgb(40,76,28) !important
+    }*/
+</style>
 <body>
     <div class="modal" id="Modal1">
         <div class="modal-dialog">
@@ -26,370 +37,373 @@
         </div>
     </div>
     <div id="NavBar" style="margin-top:2vh;">
-      
-            <div id="lefNavbar">
-                <button type="button" data-toggle="modal" data-target="#Modal1"style="border:none; background-color:transparent;">
 
-                    <i class="fa-solid fa-qrcode"></i>  Qr kod
-                </button>
-            </div>
-        
-       <div id="centerNavbar" >
-         
+        <div id="lefNavbar">
+            <button type="button" data-toggle="modal" data-target="#Modal1" style="border:none; background-color:transparent;">
+
+                <i class="fa-solid fa-qrcode"></i>  Qr kod
+            </button>
+        </div>
+
+        <div id="centerNavbar">
+
         </div>
         <div id="rightNavbar">
             <a href="@Request.Url.AbsoluteUri" onclick="copyURI(event)" style="color:black;"> <i class="fa-solid fa-share-nodes"></i> Copy Card</a>
         </div>
 
     </div>
-
-    @foreach (var x in Model)
-    {
-
-
-        <div id="PersonelInfo">
-            <div id="photo">
-                <div id="profileDiv">
-                    @if (x.ProfilePhoto == null)
-                    {
-                        <img id="pp" class="profile-user-img img-fluid img-circle"
-                             src="~/Content/images/prof.png"
-                             alt="User profile picture">
-                    }
-                    else
-                    {
-                        <img id="pp" class="profile-user-img img-fluid img-circle"
-                             src="@x.ProfilePhoto"
-                             alt="User profile picture">
-
-                    }
-                    <img src="~/Content/images/background.jpg">
-                </div>
-                <p id="name">@x.Name @x.Surname</p>
-                <p>@x.Title / @x.Company</p>
-            </div>
-        </div>
-        if (User.IsInRole("SuperAdmin") || User.IsInRole("Admin") || ViewBag.urn == ViewBag.nagme)
+    <div id="yanDiv" >
+        @foreach (var x in Model)
         {
 
-            <div id="button-div" style="text-align:center; margin-bottom:3%;">
-                <a href="/BusinessCard/CardEdit/@x.CardID" class="btn btn-outline-secondary" id="editButton">Edit Profile</a>
+
+            <div id="PersonelInfo">
+                <div id="photo">
+                    <div id="profileDiv">
+                        @if (x.ProfilePhoto == null)
+                        {
+                            <img id="pp"
+                                 src="~/Content/images/prof.png"
+                                 alt="User profile picture">
+                        }
+                        else
+                        {
+                            <img id="pp" 
+                                 src="@x.ProfilePhoto"
+                                 alt="User profile picture">
+
+                        }
+                        <img id="backProf" src="~/Content/images/background.jpg" style="visibility:hidden">
+                    </div>
+                    <p id="name">@x.Name @x.Surname</p>
+                    <p>@x.Title / @x.Company</p>
+                   @if (User.IsInRole("SuperAdmin") || User.IsInRole("Admin") || ViewBag.urn == ViewBag.nagme)
+                    {
+
+                    <div id="button-div" style="text-align:center; margin-bottom:3%;">
+                        <a href="/BusinessCard/CardEdit/@x.CardID" class="btn btn-outline-secondary" id="editButton">Edit Profile</a>
+                    </div>
+                    }
+                </div>
+            </div>
+         
+            <div id="gridBox" style="row-gap:2px !important;">
+                @if (x.ShowPhoneNumbere == true)
+                {
+                    <div id="box1">
+                        <a href="/BusinessCard/VCF/@x.UserID" target="_blank" style="color:black">
+                            <img src="~/Content/images/rehberr.png">
+                            <p>Rehbere Ekle</p>
+
+                        </a>
+                    </div>
+                }
+                @if (x.ShowPhoneNumbere == true)
+                {
+                    <div id="box1">
+                        <a href="tel:@x.PhoneNumber" target="_blank" style="color:black">
+                            <img src="~/Content/images/phone.png">
+                            <p>Telefon</p>
+
+                        </a>
+                    </div>
+                }
+                @if (x.ShowEmail == true)
+                {
+                    <div id="box1">
+                        <a href="mailto:@x.Email" target="_blank" style="color:black">
+                            <img src="~/Content/images/email.png">
+                            <p>E mail</p>
+                        </a>
+                    </div>
+                }
+                @if (x.ShowLink == true)
+                {
+                    <div id="box1">
+                        <a href="//@x.Link" target="_blank" style="color:black">
+
+                            <img src="~/Content/images/link.png">
+                            <p>Link</p>
+                        </a>
+                    </div>
+                }
+                @if (x.ShowCompanyWebsite == true)
+                {
+                    <div id="box1">
+                        <a href="//@x.CompanyWebsite" target="_blank" style="color:black">
+
+                            <img src="~/Content/images/company.png">
+                            <p>Company Website</p>
+                        </a>
+                    </div>
+                }
+                @if (x.ShowCashApp == true)
+                {
+
+                    <div id="box1">
+                        <a href="//@x.CashApp" target="_blank" style="color:black">
+                            <img src="~/Content/images/Cashapp.png">
+                            <p>Cashapp</p>
+                        </a>
+                    </div>
+                }
+                @if (x.ShowDiscord == true)
+                {
+                    <div id="box1">
+                        <a href="//@x.Discord" target="_blank" style="color:black">
+                            <img src="~/Content/images/discord.png">
+                            <p>Discord</p>
+                        </a>
+                    </div>
+                }
+
+                @if (x.ShowFacebook == true)
+                {
+                    <div id="box1">
+                        <a href="//@x.Facebook" target="_blank" style="color:black">
+
+                            <img src="~/Content/images/facebook.png">
+                            <p>Facebook</p>
+                        </a>
+                    </div>
+                }
+
+                @if (x.ShowGithub == true)
+                {
+                    <div id="box1">
+                        <a href="//@x.Github" target="_blank" style="color:black">
+
+                            <img src="~/Content/images/GitHub.png">
+                            <p>GitHub</p>
+                        </a>
+                    </div>
+                }
+                @if (x.ShowInstagram == true)
+                {
+                    <div id="box1">
+                        <a href="//@x.Instagram" target="_blank" style="color:black">
+
+                            <img src="~/Content/images/instagram.png">
+                            <p>İnstagram</p>
+                        </a>
+                    </div>
+                }
+
+                @if (x.ShowLinkedIn == true)
+                {
+                    <div id="box1">
+                        <a href="//@x.LinkedIn" target="_blank" style="color:black">
+
+                            <img src="~/Content/images/linked.png">
+                            <p>Linkedin</p>
+                        </a>
+                    </div>
+                }
+                @if (x.ShowPaypal == true)
+                {
+                    <div id="box1">
+                        <a href="//@x.Paypal" target="_blank" style="color:black">
+
+                            <img src="~/Content/images/paypal.png">
+                            <p>Paypal</p>
+                        </a>
+                    </div>
+                }
+                @if (x.ShowSignal == true)
+                {
+                    <div id="box1">
+                        <a href="//@x.Signal" target="_blank" style="color:black">
+
+                            <img src="~/Content/images/Signal.png">
+                            <p>Signal</p>
+                        </a>
+                    </div>
+                }
+                @if (x.ShowSkype == true)
+                {
+                    <div id="box1">
+                        <a href="//@x.Skype" target="_blank" style="color:black">
+
+                            <img src="~/Content/images/skype.png">
+                            <p>Skype</p>
+                        </a>
+                    </div>
+                }
+                @if (x.ShowSnapchat == true)
+                {
+                    <div id="box1">
+                        <a href="//@x.Snapchat" target="_blank" style="color:black">
+
+                            <img src="~/Content/images/SNAP.png">
+                            <p>Snapchat</p>
+                        </a>
+                    </div>
+                }
+                @if (x.ShowTelegram == true)
+                {
+                    <div id="box1">
+                        <a href="https://t.me/@x.Telegram" target="_blank" style="color:black">
+
+                            <img src="~/Content/images/Telegram.png">
+                            <p>Telegram</p>
+                        </a>
+                    </div>
+                }
+                @if (x.ShowTiktok == true)
+                {
+                    <div id="box1">
+                        <a href="//@x.Tiktok" target="_blank" style="color:black">
+
+                            <img src="~/Content/images/tiktok.png">
+                            <p>Tiktok</p>
+                        </a>
+                    </div>
+                }
+                @if (x.ShowTwitter == true)
+                {
+                    <div id="box1">
+                        <a href="//@x.Twitter" target="_blank" style="color:black">
+
+                            <img src="~/Content/images/twitter.png">
+                            <p>Tiktok</p>
+                        </a>
+                    </div>
+                }
+                @if (x.ShowTwitch == true)
+                {
+                    <div id="box1">
+                        <a href="//@x.Twitch" target="_blank" style="color:black">
+
+                            <img src="~/Content/images/twitch.png">
+                            <p>twitch</p>
+                        </a>
+                    </div>
+                }
+                @if (x.ShowYelp == true)
+                {
+                    <div id="box1">
+                        <a href="//@x.Yelp" target="_blank" style="color:black">
+
+                            <img src="~/Content/images/yelp.png">
+                            <p>Yelp </p>
+                        </a>
+                    </div>
+
+                }
+                @if (x.ShowVenmo == true)
+                {
+                    <div id="box1">
+                        <a href="//@x.Venmo" target="_blank" style="color:black">
+
+                            <img src="~/Content/images/venmo.png">
+                            <p>Venmo</p>
+                        </a>
+                    </div>
+
+                }
+                @if (x.ShowWhatsapp == true)
+                {
+                    <div id="box1">
+                        <a href="https://wa.me/@x.Whatsapp" target="_blank" style="color:black">
+
+                            <img src="~/Content/images/whatsapp.png">
+                            <p>Whatsapp</p>
+                        </a>
+                    </div>
+                }
+                @if (x.ShowYoutube == true)
+                {
+                    <div id="box1">
+                        <a href="//@x.Youtube" target="_blank" style="color:black">
+
+                            <img src="~/Content/images/youtube.png">
+                            <p>Youtube</p>
+                        </a>
+
+                    </div>
+                }
+                @if (x.ShowCalendly == true)
+                {
+                    <div id="box1">
+                        <a href="//@x.Calendly" target="_blank" style="color:black">
+
+                            <img src="~/Content/images/calendly.png">
+                            <p>Calendly</p>
+                        </a>
+
+                    </div>
+                }
+                @if (x.ShowViber == true)
+                {
+                    <div id="box1">
+                        <a href="//@x.Viber" target="_blank" style="color:black">
+
+                            <img src="~/Content/images/viber.png">
+                            <p>Viber</p>
+                        </a>
+
+                    </div>
+                }
+                @if (x.ShowWechat == true)
+                {
+                    <div id="box1">
+                        <a href="//@x.Wechat" target="_blank" style="color:black">
+
+                            <img src="~/Content/images/wechat.png">
+                            <p>WeChat</p>
+                        </a>
+
+                    </div>
+                }
+                @if (x.ShowBitcoin == true)
+                {
+                    <div id="box1">
+                        <a href="//@x.Bitcoin" target="_blank" style="color:black">
+
+                            <img src="~/Content/images/bitcoin.png">
+                            <p>Bitcoin</p>
+                        </a>
+
+                    </div>
+                }
+                @if (x.ShowEthereum == true)
+                {
+                    <div id="box1">
+                        <a href="//@x.Ethereum" target="_blank" style="color:black">
+
+                            <img src="~/Content/images/eth.png">
+                            <p>Ethereum</p>
+                        </a>
+
+                    </div>
+                }@if (x.ShowCrypto == true)
+                {
+                    <div id="box1">
+                        <a href="//@x.Crypto" target="_blank" style="color:black">
+
+                            <img src="~/Content/images/crypto.png">
+                            <p>Crypto Wallet</p>
+                        </a>
+
+                    </div>
+                }
+                @if (x.ShowIBAN == true)
+                {
+                    <div id="box1">
+                        <a href="//@x.IBAN" target="_blank" style="color:black">
+
+                            <img src="~/Content/images/iban.png">
+                            <p>IBAN</p>
+                        </a>
+
+                    </div>
+                }
+                <div id="backgroundDiv" style="background: rgb(190,189,173); background: radial-gradient(circle, rgba(190,189,173,1) 61%, rgba(154,168,142,1) 100%); "></div>
             </div>
         }
-<div id="gridBox">
-    @if (x.ShowPhoneNumbere == true)
-    {
-        <div id="box1">
-            <a href="/BusinessCard/VCF/@x.UserID" target="_blank" style="color:black">
-                <img src="~/Content/images/rehberr.png">
-                <p>Rehbere Ekle</p>
+    </div>
 
-            </a>
-        </div>
-    }
-    @if (x.ShowPhoneNumbere == true)
-    {
-        <div id="box1">
-            <a href="tel:@x.PhoneNumber" target="_blank" style="color:black">
-                <img src="~/Content/images/phone.png">
-                <p>Telefon</p>
-
-            </a>
-        </div>
-    }
-    @if (x.ShowEmail == true)
-    {
-        <div id="box1">
-            <a href="mailto:@x.Email" target="_blank" style="color:black">
-                <img src="~/Content/images/email.png">
-                <p>E mail</p>
-            </a>
-        </div>
-    }
-    @if (x.ShowLink == true)
-    {
-        <div id="box1">
-            <a href="//@x.Link" target="_blank" style="color:black">
-
-                <img src="~/Content/images/link.png">
-                <p>Link</p>
-            </a>
-        </div>
-    }
-    @if (x.ShowCompanyWebsite == true)
-    {
-        <div id="box1">
-            <a href="//@x.CompanyWebsite" target="_blank" style="color:black">
-
-                <img src="~/Content/images/company.png">
-                <p>Company Website</p>
-            </a>
-        </div>
-    }
-    @if (x.ShowCashApp == true)
-    {
-
-        <div id="box1">
-            <a href="//@x.CashApp" target="_blank" style="color:black">
-                <img src="~/Content/images/Cashapp.png">
-                <p>Cashapp</p>
-            </a>
-        </div>
-    }
-    @if (x.ShowDiscord == true)
-    {
-        <div id="box1">
-            <a href="//@x.Discord" target="_blank" style="color:black">
-                <img src="~/Content/images/discord.png">
-                <p>Discord</p>
-            </a>
-        </div>
-    }
-
-    @if (x.ShowFacebook == true)
-    {
-        <div id="box1">
-            <a href="//@x.Facebook" target="_blank" style="color:black">
-
-                <img src="~/Content/images/facebook.png">
-                <p>Facebook</p>
-            </a>
-        </div>
-    }
-
-    @if (x.ShowGithub == true)
-    {
-        <div id="box1">
-            <a href="//@x.Github" target="_blank" style="color:black">
-
-                <img src="~/Content/images/GitHub.png">
-                <p>GitHub</p>
-            </a>
-        </div>
-    }
-    @if (x.ShowInstagram == true)
-    {
-        <div id="box1">
-            <a href="//@x.Instagram" target="_blank" style="color:black">
-
-                <img src="~/Content/images/instagram.png">
-                <p>İnstagram</p>
-            </a>
-        </div>
-    }
-
-    @if (x.ShowLinkedIn == true)
-    {
-        <div id="box1">
-            <a href="//@x.LinkedIn" target="_blank" style="color:black">
-
-                <img src="~/Content/images/linked.png">
-                <p>Linkedin</p>
-            </a>
-        </div>
-    }
-    @if (x.ShowPaypal == true)
-    {
-        <div id="box1">
-            <a href="//@x.Paypal" target="_blank" style="color:black">
-
-                <img src="~/Content/images/paypal.png">
-                <p>Paypal</p>
-            </a>
-        </div>
-    }
-    @if (x.ShowSignal == true)
-    {
-        <div id="box1">
-            <a href="//@x.Signal" target="_blank" style="color:black">
-
-                <img src="~/Content/images/Signal.png">
-                <p>Signal</p>
-            </a>
-        </div>
-    }
-    @if (x.ShowSkype == true)
-    {
-        <div id="box1">
-            <a href="//@x.Skype" target="_blank" style="color:black">
-
-                <img src="~/Content/images/skype.png">
-                <p>Skype</p>
-            </a>
-        </div>
-    }
-    @if (x.ShowSnapchat == true)
-    {
-        <div id="box1">
-            <a href="//@x.Snapchat" target="_blank" style="color:black">
-
-                <img src="~/Content/images/SNAP.png">
-                <p>Snapchat</p>
-            </a>
-        </div>
-    }
-    @if (x.ShowTelegram == true)
-    {
-        <div id="box1">
-            <a href="https://t.me/@x.Telegram" target="_blank" style="color:black">
-
-                <img src="~/Content/images/Telegram.png">
-                <p>Telegram</p>
-            </a>
-        </div>
-    }
-    @if (x.ShowTiktok == true)
-    {
-        <div id="box1">
-            <a href="//@x.Tiktok" target="_blank" style="color:black">
-
-                <img src="~/Content/images/tiktok.png">
-                <p>Tiktok</p>
-            </a>
-        </div>
-    }
-    @if (x.ShowTwitter == true)
-    {
-        <div id="box1">
-            <a href="//@x.Twitter" target="_blank" style="color:black">
-
-                <img src="~/Content/images/twitter.png">
-                <p>Tiktok</p>
-            </a>
-        </div>
-    }
-    @if (x.ShowTwitch == true)
-    {
-        <div id="box1">
-            <a href="//@x.Twitch" target="_blank" style="color:black">
-
-                <img src="~/Content/images/twitch.png">
-                <p>twitch</p>
-            </a>
-        </div>
-    }
-    @if (x.ShowYelp == true)
-    {
-        <div id="box1">
-            <a href="//@x.Yelp" target="_blank" style="color:black">
-
-                <img src="~/Content/images/yelp.png">
-                <p>Yelp </p>
-            </a>
-        </div>
-
-    }
-    @if (x.ShowVenmo == true)
-    {
-        <div id="box1">
-            <a href="//@x.Venmo" target="_blank" style="color:black">
-
-                <img src="~/Content/images/venmo.png">
-                <p>Venmo</p>
-            </a>
-        </div>
-
-    }
-    @if (x.ShowWhatsapp == true)
-    {
-        <div id="box1">
-            <a href="https://wa.me/@x.Whatsapp" target="_blank" style="color:black">
-
-                <img src="~/Content/images/whatsapp.png">
-                <p>Whatsapp</p>
-            </a>
-        </div>
-    }
-    @if (x.ShowYoutube == true)
-    {
-        <div id="box1">
-            <a href="//@x.Youtube" target="_blank" style="color:black">
-
-                <img src="~/Content/images/youtube.png">
-                <p>Youtube</p>
-            </a>
-
-        </div>
-    }
-    @if (x.ShowCalendly == true)
-    {
-        <div id="box1">
-            <a href="//@x.Calendly" target="_blank" style="color:black">
-
-                <img src="~/Content/images/calendly.png">
-                <p>Calendly</p>
-            </a>
-
-        </div>
-    }
-    @if (x.ShowViber == true)
-    {
-        <div id="box1">
-            <a href="//@x.Viber" target="_blank" style="color:black">
-
-                <img src="~/Content/images/viber.png">
-                <p>Viber</p>
-            </a>
-
-        </div>
-    }
-    @if (x.ShowWechat == true)
-    {
-        <div id="box1">
-            <a href="//@x.Wechat" target="_blank" style="color:black">
-
-                <img src="~/Content/images/wechat.png">
-                <p>WeChat</p>
-            </a>
-
-        </div>
-    }
-    @if (x.ShowBitcoin == true)
-    {
-        <div id="box1">
-            <a href="//@x.Bitcoin" target="_blank" style="color:black">
-
-                <img src="~/Content/images/bitcoin.png">
-                <p>Bitcoin</p>
-            </a>
-
-        </div>
-    }
-    @if (x.ShowEthereum == true)
-    {
-        <div id="box1">
-            <a href="//@x.Ethereum" target="_blank" style="color:black">
-
-                <img src="~/Content/images/eth.png">
-                <p>Ethereum</p>
-            </a>
-
-        </div>
-    }@if (x.ShowCrypto == true)
-    {
-        <div id="box1">
-            <a href="//@x.Crypto" target="_blank" style="color:black">
-
-                <img src="~/Content/images/crypto.png">
-                <p>Crypto Wallet</p>
-            </a>
-
-        </div>
-    }
-    @if (x.ShowIBAN == true)
-    {
-        <div id="box1">
-            <a href="//@x.IBAN" target="_blank" style="color:black">
-
-                <img src="~/Content/images/iban.png">
-                <p>IBAN</p>
-            </a>
-
-        </div>
-    }
-    <div id="backgroundDiv" style="background-color: #F4F6F9 !important;"></div>
-</div>
-    }
 </body>
 <script>
 

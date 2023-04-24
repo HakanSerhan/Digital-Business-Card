@@ -1,0 +1,354 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="account" xml:space="preserve">
+    <value>Hesabım</value>
+  </data>
+  <data name="activ" xml:space="preserve">
+    <value>Aktivasyon Kodu</value>
+  </data>
+  <data name="addcontact" xml:space="preserve">
+    <value>Rehbere Ekle</value>
+  </data>
+  <data name="adress" xml:space="preserve">
+    <value>Adres</value>
+  </data>
+  <data name="bitcoin" xml:space="preserve">
+    <value>Bitcoin</value>
+  </data>
+  <data name="btcwal" xml:space="preserve">
+    <value>Bitcoin Cüzdanı</value>
+  </data>
+  <data name="calendly" xml:space="preserve">
+    <value>Calendly</value>
+  </data>
+  <data name="cardinfo" xml:space="preserve">
+    <value>Kart Bilgisi</value>
+  </data>
+  <data name="cardinfor" xml:space="preserve">
+    <value>Kart Bilgileri</value>
+  </data>
+  <data name="cashapp" xml:space="preserve">
+    <value>Cashapp</value>
+  </data>
+  <data name="chose" xml:space="preserve">
+    <value>Sonraki Girişleriniz İçin Bir Şifre Belirleyin</value>
+  </data>
+  <data name="ckb" xml:space="preserve">
+    <value>CKB Banka</value>
+  </data>
+  <data name="comm" xml:space="preserve">
+    <value>İletişim</value>
+  </data>
+  <data name="company" xml:space="preserve">
+    <value>Şirket</value>
+  </data>
+  <data name="compweb" xml:space="preserve">
+    <value>Şirket Websitesi</value>
+  </data>
+  <data name="confirm" xml:space="preserve">
+    <value>Onayla</value>
+  </data>
+  <data name="copycard" xml:space="preserve">
+    <value>Kartı Kopyala</value>
+  </data>
+  <data name="copytoclipboard" xml:space="preserve">
+    <value>Panoya Kopyala</value>
+  </data>
+  <data name="crypto" xml:space="preserve">
+    <value>Crypto Cüzdanı</value>
+  </data>
+  <data name="delete" xml:space="preserve">
+    <value>Sil</value>
+  </data>
+  <data name="discord" xml:space="preserve">
+    <value>Discord</value>
+  </data>
+  <data name="edit" xml:space="preserve">
+    <value>Profili Düzenle</value>
+  </data>
+  <data name="editt" xml:space="preserve">
+    <value>Düzenle</value>
+  </data>
+  <data name="email" xml:space="preserve">
+    <value>E Mail</value>
+  </data>
+  <data name="emailadress" xml:space="preserve">
+    <value>E Mail Adresi</value>
+  </data>
+  <data name="eth" xml:space="preserve">
+    <value>Ethereum</value>
+  </data>
+  <data name="ethwal" xml:space="preserve">
+    <value>Ethereum Cüzdanı</value>
+  </data>
+  <data name="facebook" xml:space="preserve">
+    <value>Facebook</value>
+  </data>
+  <data name="finance" xml:space="preserve">
+    <value>Finans</value>
+  </data>
+  <data name="get" xml:space="preserve">
+    <value>Şimi Kartını Al!</value>
+  </data>
+  <data name="github" xml:space="preserve">
+    <value>Github</value>
+  </data>
+  <data name="gohome" xml:space="preserve">
+    <value>Ana Menüye Dön</value>
+  </data>
+  <data name="iban" xml:space="preserve">
+    <value>IBAN</value>
+  </data>
+  <data name="id" xml:space="preserve">
+    <value>ID</value>
+  </data>
+  <data name="instagram" xml:space="preserve">
+    <value>Instagram</value>
+  </data>
+  <data name="lang" xml:space="preserve">
+    <value>Dil Seç</value>
+  </data>
+  <data name="link" xml:space="preserve">
+    <value>Link</value>
+  </data>
+  <data name="linkedin" xml:space="preserve">
+    <value>LinkedIn</value>
+  </data>
+  <data name="login" xml:space="preserve">
+    <value>Giriş Yap</value>
+  </data>
+  <data name="logout" xml:space="preserve">
+    <value>Çıkış Yap</value>
+  </data>
+  <data name="lovcen" xml:space="preserve">
+    <value>Lovcen Banka</value>
+  </data>
+  <data name="media" xml:space="preserve">
+    <value>Sosyal Medya</value>
+  </data>
+  <data name="mycard" xml:space="preserve">
+    <value>Kartım</value>
+  </data>
+  <data name="name" xml:space="preserve">
+    <value>Ad</value>
+  </data>
+  <data name="newuser" xml:space="preserve">
+    <value>Yeni Kullanıcı</value>
+  </data>
+  <data name="no" xml:space="preserve">
+    <value>No</value>
+  </data>
+  <data name="not" xml:space="preserve">
+    <value>Sayfa Bulunamadı</value>
+  </data>
+  <data name="number" xml:space="preserve">
+    <value>Numara</value>
+  </data>
+  <data name="password" xml:space="preserve">
+    <value>Şifre</value>
+  </data>
+  <data name="paypal" xml:space="preserve">
+    <value>Paypal</value>
+  </data>
+  <data name="phone" xml:space="preserve">
+    <value>Telefon Numarası</value>
+  </data>
+  <data name="please" xml:space="preserve">
+    <value>Lütfen Ana Kart Bilgilerini Doldur</value>
+  </data>
+  <data name="qrcode" xml:space="preserve">
+    <value>QR Kod</value>
+  </data>
+  <data name="save" xml:space="preserve">
+    <value>Kaydet</value>
+  </data>
+  <data name="search" xml:space="preserve">
+    <value>Ara</value>
+  </data>
+  <data name="showon" xml:space="preserve">
+    <value>Kartımda Göster</value>
+  </data>
+  <data name="signal" xml:space="preserve">
+    <value>Signal</value>
+  </data>
+  <data name="skype" xml:space="preserve">
+    <value>Skype</value>
+  </data>
+  <data name="snap" xml:space="preserve">
+    <value>Snapchat</value>
+  </data>
+  <data name="surname" xml:space="preserve">
+    <value>Soyad</value>
+  </data>
+  <data name="telegram" xml:space="preserve">
+    <value>Telegram</value>
+  </data>
+  <data name="tiktok" xml:space="preserve">
+    <value>Tiktok</value>
+  </data>
+  <data name="title" xml:space="preserve">
+    <value>Unvan</value>
+  </data>
+  <data name="twitch" xml:space="preserve">
+    <value>Twitch</value>
+  </data>
+  <data name="twitter" xml:space="preserve">
+    <value>Twitter</value>
+  </data>
+  <data name="update" xml:space="preserve">
+    <value>Güncelle</value>
+  </data>
+  <data name="usernam" xml:space="preserve">
+    <value>Kullanıcı Adı</value>
+  </data>
+  <data name="userrole" xml:space="preserve">
+    <value>Kullanıcı Rolü</value>
+  </data>
+  <data name="users" xml:space="preserve">
+    <value>Kullanıcılar</value>
+  </data>
+  <data name="venmo" xml:space="preserve">
+    <value>Venmo</value>
+  </data>
+  <data name="verified" xml:space="preserve">
+    <value>Onaylı</value>
+  </data>
+  <data name="viber" xml:space="preserve">
+    <value>Viber</value>
+  </data>
+  <data name="walletno" xml:space="preserve">
+    <value>Cüzdan no</value>
+  </data>
+  <data name="wechat" xml:space="preserve">
+    <value>WeChat</value>
+  </data>
+  <data name="whatsapp" xml:space="preserve">
+    <value>Whatsapp</value>
+  </data>
+  <data name="yelp" xml:space="preserve">
+    <value>Yelp</value>
+  </data>
+  <data name="youtube" xml:space="preserve">
+    <value>Youtube</value>
+  </data>
+  <data name="ziraat" xml:space="preserve">
+    <value>Ziraat Bank</value>
+  </data>
+</root>

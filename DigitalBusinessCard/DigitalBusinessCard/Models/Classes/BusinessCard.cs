@@ -174,5 +174,19 @@ namespace DigitalBusinessCard.Models.Classes
         [StringLength(100)]
         public string IBAN { get; set; }
         public bool ShowIBAN { get; set; }
+        [Column(TypeName = "Varchar")]
+
+        [StringLength(100)]
+        public string Ziraat { get; set; }
+        public bool ShowZiraat { get; set; }
+        [Column(TypeName = "Varchar")]
+
+        [StringLength(100)]
+        public string Lovcen { get; set; }
+        public bool ShowLovcen { get; set; }
+
+        [StringLength(100)]
+        public string CKB { get; set; }
+        public bool ShowCKB { get; set; }
     }
 }

@@ -17,17 +17,17 @@
     @Html.TextBoxFor(x => x.UserName, new { @class = "form-control" })
 
   
-    <label>E-Mail</label>
+<label>@DigitalBusinessCard.Language.Localization.email</label>
     @Html.TextBoxFor(x => x.Email, new { @class = "form-control" })
-    <label>Activation Code</label>
+<label>@DigitalBusinessCard.Language.Localization.activ</label>
     @Html.TextBoxFor(x => x.Password, new { @class = "form-control" })
 
-    <label>User Role</label>
+<label>@DigitalBusinessCard.Language.Localization.userrole</label>
     @Html.TextBoxFor(x => x.UserRole, new { @class = "form-control" })
-    <label>Verified</label>
+<label>@DigitalBusinessCard.Language.Localization.verified</label>
     @Html.CheckBoxFor(x => x.Verified, new { @class = "form-control" })
     @Html.HiddenFor(x => x.UserID)
 
     <br />
-    <button class="btn btn-outline-dark" style="width:100%;">Edit</button>
+    <button class="btn btn-outline-dark" style="width:100%;">@DigitalBusinessCard.Language.Localization.editt</button>
 }   

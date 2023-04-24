@@ -6,19 +6,19 @@
 }
 
 
-<h1 style="font-weight:600;">My Account</h1>
+<h1 style="font-weight:600;">@DigitalBusinessCard.Language.Localization.account</h1>
 <br />
 <h3> @ViewBag.name </h3>
 <br />
 @using (Html.BeginForm("UpdateMyProfile", "User", FormMethod.Post))
 {
 
-    <label>E-Mail</label>
+    <label>@DigitalBusinessCard.Language.Localization.email</label>
     @Html.TextBoxFor(x => x.Email, new { @class = "form-control" })
-    <label>Password</label>
+<label>@DigitalBusinessCard.Language.Localization.password</label>
     @Html.TextBoxFor(x => x.Password, new { @class = "form-control",id="sifre" })
     @Html.HiddenFor(x => x.UserID)
 
     <br />
-    <button class="btn btn-outline-dark" style="width:100%;">Update</button>
+    <button class="btn btn-outline-dark" style="width:100%;">@DigitalBusinessCard.Language.Localization.update</button>
 }   

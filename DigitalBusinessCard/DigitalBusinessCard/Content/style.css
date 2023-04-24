@@ -1,4 +1,4 @@
-*{margin: 0; padding: 0;} 
+/**{margin: 0; padding: 0;} 
 
 body{
     font-family: 'Roboto', sans-serif;
@@ -6,44 +6,342 @@ body{
     color: black;
     line-height: 1.5;
 }
-#yanDiv {
-   display:flex;
-   flex-direction:row;
-   width:80%;
-   margin-left:auto;
-   margin-right:12.5%;
+
+#NavBar{
+    margin-top: 1%;
+    display: flex;
+    justify-content:space-evenly ;
+    font-family: sans-serif;
+    height: 3vh;
+    font-size: 15px;
+    color: #0c0c0c;
+    text-decoration: none;
+}
+ 
+#PersonelInfo {
+    text-align: center;
+    margin: 3%;
+}
+
+#PersonelInfo p {
+    display: block;
+    margin-block-start: 1em;
+    text-align: left;
+    margin-left: 32%;
+    color: #0e0d0d;
+}
+
+body{
+    height: 100vh;
+    background-size: cover;
+    background-repeat: no-repeat;
+}   
+
+#PersonelInfo img{
+width: 37%;
+height: 300px;
+-webkit-box-shadow: 1px 11px 19px 0px rgba(145,132,145,1);
+-moz-box-shadow: 1px 11px 19px 0px rgba(145,132,145,1);
+box-shadow: 1px 11px 19px 0px rgba(145,132,145,1);
 }
 @media only screen and (max-width: 480px) {
-    #yanDiv {
-        display: flex;
-        flex-direction: column;
-        width: 80%;
+    #PersonelInfo img{
+        width: 100%;
+        height: 300px;
+        }
+
+        
+#PersonelInfo p {
+    display: block;
+    margin-block-start: 1em;
+    text-align: left;
+    margin-left: 1%;
+   
+}
+#box1 img{
+    width: 100%;
+
+}
+
+}
+#gridBox{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-row-gap: 15%;
+    width: 50%;
+    margin-left: auto;
+    margin-right: auto;
+ 
+}
+
+#box1 img{
+    width:  20%;
+    border-radius: 15px;
+}
+#name{
+    font-weight: 600;
+    font-size: 28px;
+}
+#box1{
+    text-align: center;
+}
+@media only screen and (max-width: 480px) {
+
+#box1 img{
+    width: 45%;
+}
+
+#gridBox{
+    margin-top: 6%;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    width: 100%;
+    margin-left: auto;
+    margin-right: auto;
+ 
+}
+
+
+}
+#box1 {
+    text-align: center;
+}
+
+#gridBox2 {
+    row-gap:6vh;
+    margin-top: 6%;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    width: 100%;
+    margin-left: auto;
+    margin-right: auto;
+}
+@media only screen and (max-width: 480px) {
+
+    #box2 img {
+        width: 85%;
+    }
+
+    #gridBox2 {
+        margin-top: 6%;
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr;
+        width: 100%;
         margin-left: auto;
         margin-right: auto;
     }
 }
+#box2 img {
+    width: 30%;
+    border-radius: 15px;
+}
+#box2 {
+    text-align: center;
+}
+
+#backgroundDiv{
+    background-size: cover;
+    background-color: white;
+    background-repeat: no-repeat;
+    height: 100vh;
+    opacity: 1;
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    top: 0px ;
+    left: 0px ;
+    z-index: -5;
+}
+
+#editButton {
+    width:35%
+}
+@media only screen and (max-width: 480px) {
+
+    #editButton {
+        width: 90%
+    }
+   
+}
+#pp {
+    position: absolute;
+    align-self: center;
+    transform: scale(0.55);
+    width: 27% !important;
+    height: 50vh !important;
+}
+
+#profileDiv {
+    align-content: center;
+    display: flex;
+    justify-content: center
+}
+
+@media only screen and (max-width: 480px) {
+    #pp {
+        transform: scale(0.95);
+        width: 57% !important;
+        height: 20% !important;
+    }
+}
+
+
+#editdiv {
+    margin-left:auto;
+    margin-right:auto;
+
+    margin-top: 20px;
+    width: 60%;
+}
+@media only screen and (max-width: 480px) {
+
+    #editdiv {
+        margin-left: auto;
+        margin-right: auto;
+        margin-top: 20px;
+        width: 100%;
+    }
+}
+
+#editCard{
+    border:none;
+    padding:0;
+    background-color:transparent;
+}
+#editCard img{
+    padding:0
+}
+
+
+#editfoto {
+    width: 60%;
+    border-radius: 20px;
+    -webkit-box-shadow: 1px 5px 14px 7px rgba(201,195,201,1);
+    -moz-box-shadow: 1px 5px 14px 7px rgba(201,195,201,1);
+    box-shadow: 1px 5px 14px 7px rgba(201,195,201,1);
+}
+
+@media only screen and (max-width: 580px) {
+
+
+    #editfoto {
+        width: 100%;
+        -webkit-box-shadow: 0px 7px 14px 6px rgba(201,195,201,1);
+        -moz-box-shadow: 0px 7px 14px 6px rgba(201,195,201,1);
+        box-shadow: 0px 7px 14px 6px rgba(201,195,201,1);
+    }
+}
+
+#modelboy {
+   width:35%
+}
+@media only screen and (max-width: 580px) {
+
+
+    #modelboy {
+        width: 95%
+    }
+}
+*/
+
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: 'Roboto', sans-serif;
+    height: 100%;
+    color: black;
+    line-height: 1.5;
+}
+
+#PersonelInfo{
+    width:45%;
+
+}
+@media only screen and (max-width: 480px) {
+    #PersonelInfo {
+        width: 100%;
+    }
+}
+#yanDiv {
+    display: flex;
+    flex-direction: row;
+    width: 80%;
+    background: rgba(243,243,241,255);
+    margin-left: auto;
+    align-items: center;
+    margin-top: 3vh;
+    box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+    border-radius: 45px;
+    margin-right: auto;
+}
+
+#photo {
+    background: rgb(97,158,131);
+    background: linear-gradient(90deg, rgba(97,158,131,1) 9%, rgba(243,243,241,1) 100%);
+    height: 96vh;
+    border-radius: 45px 0px 0px 45px;
+}
+
+    @media only screen and (max-width: 480px) {
+        #yanDiv {
+            display: flex;
+            flex-direction: column;
+            width: 96%;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        #photo {
+            background: rgb(97,158,131);
+            background: linear-gradient(180deg, rgba(97,158,131,1) 9%, rgba(243,243,241,1) 100%);
+            height: 55%;
+            padding-bottom: 5%;
+            border-radius: 45px 45px 0px 0px;
+        }
+    }
 
     #NavBar {
-        margin-top: 1%;
         display: flex;
         justify-content: space-evenly;
         font-family: sans-serif;
-        height: 3vh;
-        font-size: 15px;
+        font-size: 20px;
         color: #0c0c0c;
+        font-weight: 600;
         text-decoration: none;
+    }
+
+        #NavBar button {
+            font-weight: 600;
+        }
+
+    @media only screen and (max-width: 480px) {
+        #NavBar {
+            display: flex;
+            justify-content: space-evenly;
+            font-family: sans-serif;
+            font-size: 16px;
+            color: #0c0c0c;
+            font-weight: 600;
+            text-decoration: none;
+        }
+
+            #NavBar button {
+                font-weight: 600;
+            }
     }
 
     #PersonelInfo {
         text-align: center;
-        margin: 3%;
     }
 
         #PersonelInfo p {
             display: block;
             margin-block-start: 1em;
             text-align: left;
-            margin-left: 27%;
+            margin-left: 28%;
             color: #0e0d0d;
         }
 
@@ -53,9 +351,9 @@ body{
     }
 
     #PersonelInfo img {
-        width:5%;
-        height:40vh;
-        margin-top:2vh;
+        width: 5%;
+        height: 40vh;
+        margin-top: 3vh;
     }
 
     @media only screen and (max-width: 480px) {
@@ -69,7 +367,7 @@ body{
             display: block;
             margin-block-start: 1em;
             text-align: left;
-            margin-left: 1%;
+            margin-left: 6%;
         }
 
         #box1 img {
@@ -77,37 +375,39 @@ body{
         }
     }
 
-#gridBox {
-    display: grid;
-    grid-template-columns: 1fr 1fr 1fr;
-    width: 50%;
-    margin-left: auto;
-    margin-right: auto;
-    margin-top: 15vh;
-}
-@media only screen and (max-width: 480px) {
     #gridBox {
         display: grid;
         grid-template-columns: 1fr 1fr 1fr;
         width: 50%;
         margin-left: auto;
         margin-right: auto;
-        margin-top: 1vh;
+        margin-top: 6vh;
     }
-}
+
+    @media only screen and (max-width: 480px) {
+        #gridBox {
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr;
+            width: 50%;
+            margin-left: auto;
+            margin-right: auto;
+            margin-top: 2vh;
+        }
+    }
+
     #box1 img {
         width: 60%;
         border-radius: 15px;
     }
 
-    #name {
-        font-weight: 600;
-        font-size: 28px;
-    }
+#name {
+    font-weight: 600;
+    font-family: "Link Sans", "Arial Black", Arial, sans-serif;
+    font-size: 28px;
+}
 
     #box1 {
         text-align: center;
-    
     }
 
     @media only screen and (max-width: 480px) {
@@ -127,19 +427,21 @@ body{
 
     #box1 {
         text-align: center;
-       
     }
+
         #box1 img {
             width: 32%;
             border-radius: 20px;
         }
-@media only screen and (max-width: 480px) {
 
-    #box1 img {
-        width: 60% !important;
-        border-radius: 15px;
+    @media only screen and (max-width: 480px) {
+
+        #box1 img {
+            width: 60% !important;
+            border-radius: 15px;
+        }
     }
-}
+
     #gridBox2 {
         row-gap: 6vh;
         margin-top: 6%;
@@ -204,10 +506,11 @@ body{
         position: absolute;
         align-self: center;
         transform: scale(0.55);
-        width: 27% !important;
+        width: 35% !important;
         height: 50vh !important;
         border-radius: 25px;
-        border: 2px solid rgb(40,76,28);
+        box-shadow: rgba(0, 0, 0, 0.19) 0px 10px 20px, rgba(0, 0, 0, 0.23) 0px 6px 6px;
+        border: 1px solid rgb(190,189,173);
     }
 
     #profileDiv {
@@ -219,8 +522,9 @@ body{
     @media only screen and (max-width: 480px) {
         #pp {
             transform: scale(1.2);
-            width: 57% !important;
-            height: 25% !important;
+            width: 63% !important;
+            height: 27vh !important;
+            box-shadow: rgba(0, 0, 0, 0.45) 0px 25px 20px -20px;
         }
     }
 

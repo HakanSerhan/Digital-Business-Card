@@ -20,11 +20,22 @@ namespace DigitalBusinessCard
          defaults: new { controller = "BusinessCard", action = "CardProfile" }
      );
 
+            routes.MapRoute(
+    name: "Home",
+    url: "Home",
+    defaults: new { controller = "Home", action = "Index" }
+);
+
+            routes.MapRoute(
+   name: "Login",
+   url: "Login",
+   defaults: new { controller = "User", action = "Login" }
+);
 
             routes.MapRoute(
                 name: "Default",
                 url: "{controller}/{action}/{id}",
-                defaults: new { controller = "User", action = "Login", id = UrlParameter.Optional }
+                defaults: new { controller = "Home", action = "Index", id = UrlParameter.Optional }
             );
 
 

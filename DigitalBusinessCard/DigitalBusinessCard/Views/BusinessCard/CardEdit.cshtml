@@ -149,24 +149,24 @@
                     <div class="modal-dialog">
                         <div class="modal-content">
                             <div class="modal-header">
-                                <h2 class="modal-title"> E-Mail </h2>
+                                <h2 class="modal-title"> @DigitalBusinessCard.Language.Localization.email </h2>
                             </div>
                             <div class="modal-body">
 
                                 <div class="row">
-                                    <div class="col col-sm-6 ">
-                                        <label>Email</label>
+                                    <div class="col ">
+                                        <label>@DigitalBusinessCard.Language.Localization.emailadress</label>
                                         @Html.TextBoxFor(x => x.Email, new { @class = "form-control" })
 
 
                                     </div>
                                     <div class="col col-sm-4" style="text-align:center">
-                                        <label>Show On Profile</label>
+                                        <label>@DigitalBusinessCard.Language.Localization.showon</label>
                                         @Html.CheckBoxFor(x => x.ShowEmail, new { @class = "form-control" })
                                     </div>
                                 </div>
                                 <br />
-                                <button class="btn btn-outline-success" style="width:100%">Confirm</button>
+                                <button class="btn btn-outline-success" style="width:100%">@DigitalBusinessCard.Language.Localization.confirm</button>
                                 <br />
                             </div>
                         </div>
@@ -176,71 +176,53 @@
                     <div class="modal-dialog">
                         <div class="modal-content">
                             <div class="modal-header">
-                                <h2 class="modal-title"> Phone Number </h2>
+                                <h2 class="modal-title"> @DigitalBusinessCard.Language.Localization.phone </h2>
                             </div>
                             <div class="modal-body">
 
                                 <div class="row">
                                     <div class="col col-sm-6">
-                                        <label>Phone</label>
+                                        <label>@DigitalBusinessCard.Language.Localization.number</label>
                                         @Html.TextBoxFor(x => x.PhoneNumber, new { @class = "form-control", placeholder = "+90********" })
 
 
                                     </div>
                                     <div class="col col-sm-4" style="text-align:center">
-                                        <label>Show On Profile</label>
+                                        <label>@DigitalBusinessCard.Language.Localization.showon</label>
                                         @Html.CheckBoxFor(x => x.ShowPhoneNumbere, new { @class = "form-control" })
                                     </div>
                                 </div>
                                 <br />
-                                <button class="btn btn-outline-success" style="width:100%">Confirm</button>
+                                <button class="btn btn-outline-success" style="width:100%">@DigitalBusinessCard.Language.Localization.confirm</button>
                                 <br />
                             </div>
                         </div>
                     </div>
                 </div>
-                <div class="modal" id="Modal3" >
+                <div class="modal" id="Modal3">
                     <div class="modal-dialog" id="modelboy">
-                        <div class="modal-content" >
+                        <div class="modal-content">
                             <div class="modal-header">
-                                <h2 class="modal-title" > WhatsApp </h2>
+                                <h2 class="modal-title"> @DigitalBusinessCard.Language.Localization.whatsapp </h2>
                             </div>
                             <div class="modal-body">
 
 
 
                                 <div class="row">
-                                    <div class="col ">
-                                        <label>Phone Number</label>
-                                        @Html.TextBoxFor(x => x.Whatsapp, new { @class = "form-control" })
+                                    <div class="col col-sm-6">
+                                        <label>@DigitalBusinessCard.Language.Localization.phone</label>
+                                        @Html.TextBoxFor(x => x.Whatsapp, new { @class = "form-control", placeholder = "+90********" })
 
 
                                     </div>
-                                    <div class="col col-sm-1" >
-                                        <label style="visibility:hidden">a</label>
-                                        <div class="checkbox-wrapper-12" style="margin-top:1vh">
-                                            <div class="cbx">
-                                                <input checked="checked" class="form-control" data-val="true" data-val-required="ShowWhatsapp alanı gereklidir." id="ShowWhatsapp" name="ShowWhatsapp" type="checkbox" value="true">
-                                                <label for="cbx-12"></label>
-                                                <svg width="15" height="14" viewbox="0 0 15 14" fill="none">
-                                                    <path d="M2 8.36364L6.23077 12L13 2"></path>
-                                                </svg>
-                                            </div>
-                                            <!-- Gooey-->
-                                            <svg xmlns="http://www.w3.org/2000/svg" version="1.1">
-                                                <defs>
-                                                    <filter id="goo-12">
-                                                        <fegaussianblur in="SourceGraphic" stddeviation="4" result="blur"></fegaussianblur>
-                                                        <fecolormatrix in="blur" mode="matrix" values="1 0 0 0 0  0 1 0 0 0  0 0 1 0 0  0 0 0 22 -7" result="goo-12"></fecolormatrix>
-                                                        <feblend in="SourceGraphic" in2="goo-12"></feblend>
-                                                    </filter>
-                                                </defs>
-                                            </svg>
-                                        </div>
+                                    <div class="col col-sm-4" style="text-align:center">
+                                        <label>@DigitalBusinessCard.Language.Localization.showon</label>
+                                        @Html.CheckBoxFor(x => x.ShowWhatsapp, new { @class = "form-control" })
                                     </div>
                                 </div>
                                 <br />
-                                <button class="btn btn-outline-success" style="width:100%">Confirm</button>
+                                <button class="btn btn-outline-success" style="width:100%">@DigitalBusinessCard.Language.Localization.confirm</button>
                                 <br />
                             </div>
                         </div>
@@ -250,23 +232,23 @@
                     <div class="modal-dialog">
                         <div class="modal-content">
                             <div class="modal-header">
-                                <h2 class="modal-title"> Link </h2>
+                                <h2 class="modal-title"> @DigitalBusinessCard.Language.Localization.link </h2>
                             </div>
                             <div class="modal-body">
                                 <div class="row">
                                     <div class="col col-sm-6">
-                                        <label>Link</label>
-                                        @Html.TextBoxFor(x => x.Link, new { @class = "form-control" })
+                                        <label>@DigitalBusinessCard.Language.Localization.link</label>
+                                        @Html.TextBoxFor(x => x.Link, new { @class = "form-control", placeholder = "www.********.com" })
 
 
                                     </div>
                                     <div class="col col-sm-4" style="text-align:center">
-                                        <label>Show On Profile</label>
+                                        <label>@DigitalBusinessCard.Language.Localization.showon</label>
                                         @Html.CheckBoxFor(x => x.ShowLink, new { @class = "form-control" })
                                     </div>
                                 </div>
                                 <br />
-                                <button class="btn btn-outline-success" style="width:100%">Confirm</button>
+                                <button class="btn btn-outline-success" style="width:100%">@DigitalBusinessCard.Language.Localization.confirm</button>
                                 <br />
                             </div>
                         </div>
@@ -276,25 +258,25 @@
                     <div class="modal-dialog">
                         <div class="modal-content">
                             <div class="modal-header">
-                                <h2 class="modal-title"> Adress </h2>
+                                <h2 class="modal-title"> @DigitalBusinessCard.Language.Localization.adress </h2>
                             </div>
                             <div class="modal-body">
 
 
                                 <div class="row">
                                     <div class="col col-sm-6">
-                                        <label>Adress</label>
+                                        <label>@DigitalBusinessCard.Language.Localization.adress</label>
                                         @Html.TextBoxFor(x => x.Adress, new { @class = "form-control" })
 
 
                                     </div>
                                     <div class="col col-sm-4" style="text-align:center">
-                                        <label>Show On Profile</label>
+                                        <label>@DigitalBusinessCard.Language.Localization.showon</label>
                                         @Html.CheckBoxFor(x => x.ShowAdress, new { @class = "form-control" })
                                     </div>
                                 </div>
                                 <br />
-                                <button class="btn btn-outline-success" style="width:100%">Confirm</button>
+                                <button class="btn btn-outline-success" style="width:100%">@DigitalBusinessCard.Language.Localization.confirm</button>
                                 <br />
                             </div>
                         </div>
@@ -304,24 +286,24 @@
                     <div class="modal-dialog">
                         <div class="modal-content">
                             <div class="modal-header">
-                                <h2 class="modal-title"> Company Website </h2>
+                                <h2 class="modal-title"> @DigitalBusinessCard.Language.Localization.compweb </h2>
                             </div>
                             <div class="modal-body">
 
                                 <div class="row">
                                     <div class="col col-sm-68">
-                                        <label>Company Website</label>
-                                        @Html.TextBoxFor(x => x.CompanyWebsite, new { @class = "form-control" })
+                                        <label>@DigitalBusinessCard.Language.Localization.link</label>
+                                        @Html.TextBoxFor(x => x.CompanyWebsite, new { @class = "form-control", placeholder = "www.********.com" })
 
 
                                     </div>
                                     <div class="col col-sm-4" style="text-align:center">
-                                        <label>Show On Profile</label>
+                                        <label>@DigitalBusinessCard.Language.Localization.showon</label>
                                         @Html.CheckBoxFor(x => x.ShowCompanyWebsite, new { @class = "form-control" })
                                     </div>
                                 </div>
                                 <br />
-                                <button class="btn btn-outline-success" style="width:100%">Confirm</button>
+                                <button class="btn btn-outline-success" style="width:100%">@DigitalBusinessCard.Language.Localization.confirm</button>
                                 <br />
                             </div>
                         </div>
@@ -331,24 +313,24 @@
                     <div class="modal-dialog">
                         <div class="modal-content">
                             <div class="modal-header">
-                                <h2 class="modal-title"> LinkedIn </h2>
+                                <h2 class="modal-title"> @DigitalBusinessCard.Language.Localization.linkedin </h2>
                             </div>
                             <div class="modal-body">
 
                                 <div class="row">
                                     <div class="col col-sm-6">
-                                        <label>LinkedIn</label>
-                                        @Html.TextBoxFor(x => x.LinkedIn, new { @class = "form-control" })
+                                        <label>@DigitalBusinessCard.Language.Localization.link</label>
+                                        @Html.TextBoxFor(x => x.LinkedIn, new { @class = "form-control", placeholder = "linkedin.com/in/********/" })
 
 
                                     </div>
                                     <div class="col col-sm-4" style="text-align:center">
-                                        <label>Show On Profile</label>
+                                        <label>@DigitalBusinessCard.Language.Localization.showon</label>
                                         @Html.CheckBoxFor(x => x.ShowLinkedIn, new { @class = "form-control" })
                                     </div>
                                 </div>
                                 <br />
-                                <button class="btn btn-outline-success" style="width:100%">Confirm</button>
+                                <button class="btn btn-outline-success" style="width:100%">@DigitalBusinessCard.Language.Localization.confirm</button>
                                 <br />
                             </div>
                         </div>
@@ -358,7 +340,7 @@
                     <div class="modal-dialog">
                         <div class="modal-content">
                             <div class="modal-header">
-                                <h2 class="modal-title"> Instagram </h2>
+                                <h2 class="modal-title"> @DigitalBusinessCard.Language.Localization.instagram </h2>
                             </div>
                             <div class="modal-body">
 
@@ -368,18 +350,18 @@
 
                                 <div class="row">
                                     <div class="col col-sm-6">
-                                        <label>Instagram</label>
-                                        @Html.TextBoxFor(x => x.Instagram, new { @class = "form-control" })
+                                        <label>@DigitalBusinessCard.Language.Localization.link</label>
+                                        @Html.TextBoxFor(x => x.Instagram, new { @class = "form-control", placeholder = "instagram.com/********" })
 
 
                                     </div>
                                     <div class="col col-sm-4" style="text-align:center">
-                                        <label>Show On Profile</label>
+                                        <label>@DigitalBusinessCard.Language.Localization.showon</label>
                                         @Html.CheckBoxFor(x => x.ShowInstagram, new { @class = "form-control" })
                                     </div>
                                 </div>
                                 <br />
-                                <button class="btn btn-outline-success" style="width:100%">Confirm</button>
+                                <button class="btn btn-outline-success" style="width:100%">@DigitalBusinessCard.Language.Localization.confirm</button>
                                 <br />
                             </div>
                         </div>
@@ -389,23 +371,23 @@
                     <div class="modal-dialog">
                         <div class="modal-content">
                             <div class="modal-header">
-                                <h2 class="modal-title"> Calendly </h2>
+                                <h2 class="modal-title"> @DigitalBusinessCard.Language.Localization.calendly </h2>
                             </div>
                             <div class="modal-body">
 
                                 <div class="row">
                                     <div class="col col-sm-6">
-                                        <label>Calendly</label>
+                                        <label>@DigitalBusinessCard.Language.Localization.link</label>
                                         @Html.TextBoxFor(x => x.Calendly, new { @class = "form-control" })
 
 
                                     </div>
                                     <div class="col col-sm-4" style="text-align:center">
-                                        <label>Show On Profile</label>
+                                        <label>@DigitalBusinessCard.Language.Localization.showon</label>
                                         @Html.CheckBoxFor(x => x.ShowCalendly, new { @class = "form-control" })
                                     </div>
                                 </div>                            <br />
-                                <button class="btn btn-outline-success" style="width:100%">Confirm</button>
+                                <button class="btn btn-outline-success" style="width:100%">@DigitalBusinessCard.Language.Localization.confirm</button>
                                 <br />
                             </div>
                         </div>
@@ -415,23 +397,23 @@
                     <div class="modal-dialog">
                         <div class="modal-content">
                             <div class="modal-header">
-                                <h2 class="modal-title"> Twitter </h2>
+                                <h2 class="modal-title"> @DigitalBusinessCard.Language.Localization.twitter </h2>
                             </div>
                             <div class="modal-body">
 
                                 <div class="row">
                                     <div class="col col-sm-6">
-                                        <label>Twitter</label>
-                                        @Html.TextBoxFor(x => x.Twitter, new { @class = "form-control" })
+                                        <label>@DigitalBusinessCard.Language.Localization.link</label>
+                                        @Html.TextBoxFor(x => x.Twitter, new { @class = "form-control", placeholder = "twitter.com/********" })
 
 
                                     </div>
                                     <div class="col col-sm-4" style="text-align:center">
-                                        <label>Show On Profile</label>
+                                        <label>@DigitalBusinessCard.Language.Localization.showon</label>
                                         @Html.CheckBoxFor(x => x.ShowTwitter, new { @class = "form-control" })
                                     </div>
                                 </div>                      <br />
-                                <button class="btn btn-outline-success" style="width:100%">Confirm</button>
+                                                            <button class="btn btn-outline-success" style="width:100%">@DigitalBusinessCard.Language.Localization.confirm</button>
                                 <br />
                             </div>
                         </div>
@@ -440,7 +422,7 @@
                     <div class="modal-dialog">
                         <div class="modal-content">
                             <div class="modal-header">
-                                <h2 class="modal-title"> Facebook </h2>
+                                <h2 class="modal-title"> @DigitalBusinessCard.Language.Localization.facebook </h2>
                             </div>
                             <div class="modal-body">
 
@@ -449,18 +431,18 @@
 
                                 <div class="row">
                                     <div class="col col-sm-6">
-                                        <label>Facebook</label>
-                                        @Html.TextBoxFor(x => x.Facebook, new { @class = "form-control" })
+                                        <label>@DigitalBusinessCard.Language.Localization.link</label>
+                                        @Html.TextBoxFor(x => x.Facebook, new { @class = "form-control", placeholder = "facebook.com/********" })
 
 
                                     </div>
                                     <div class="col col-sm-4" style="text-align:center">
-                                        <label>Show On Profile</label>
+                                        <label>@DigitalBusinessCard.Language.Localization.showon</label>
                                         @Html.CheckBoxFor(x => x.ShowFacebook, new { @class = "form-control" })
                                     </div>
                                 </div>
                             </div>                            <br />
-                            <button class="btn btn-outline-success" style="width:100%">Confirm</button>
+                                                              <button class="btn btn-outline-success" style="width:100%">@DigitalBusinessCard.Language.Localization.confirm</button>
                             <br />
                         </div>
                     </div>
@@ -469,7 +451,7 @@
                     <div class="modal-dialog">
                         <div class="modal-content">
                             <div class="modal-header">
-                                <h2 class="modal-title"> Snapchat </h2>
+                                <h2 class="modal-title"> @DigitalBusinessCard.Language.Localization.snap </h2>
                             </div>
                             <div class="modal-body">
 
@@ -478,17 +460,17 @@
 
                                 <div class="row">
                                     <div class="col col-sm-6">
-                                        <label>Snapchat</label>
-                                        @Html.TextBoxFor(x => x.Snapchat, new { @class = "form-control" })
+                                        <label>@DigitalBusinessCard.Language.Localization.link</label>
+                                        @Html.TextBoxFor(x => x.Snapchat, new { @class = "form-control", placeholder = "snapchat.com/add/********" })
 
 
                                     </div>
                                     <div class="col col-sm-4" style="text-align:center">
-                                        <label>Show On Profile</label>
+                                        <label>@DigitalBusinessCard.Language.Localization.showon</label>
                                         @Html.CheckBoxFor(x => x.ShowSnapchat, new { @class = "form-control" })
                                     </div>
                                 </div>              <br />
-                                <button class="btn btn-outline-success" style="width:100%">Confirm</button>
+                                                    <button class="btn btn-outline-success" style="width:100%">@DigitalBusinessCard.Language.Localization.confirm</button>
                                 <br />
                             </div>
                         </div>
@@ -498,22 +480,22 @@
                     <div class="modal-dialog">
                         <div class="modal-content">
                             <div class="modal-header">
-                                <h2 class="modal-title"> Tiktok </h2>
+                                <h2 class="modal-title"> @DigitalBusinessCard.Language.Localization.tiktok </h2>
                             </div>
                             <div class="modal-body">
                                 <div class="row">
                                     <div class="col col-sm-6">
-                                        <label>Tiktok</label>
-                                        @Html.TextBoxFor(x => x.Tiktok, new { @class = "form-control" })
+                                        <label>@DigitalBusinessCard.Language.Localization.link</label>
+                                        @Html.TextBoxFor(x => x.Tiktok, new { @class = "form-control", placeholder = "tiktok.com/********" })
 
 
                                     </div>
                                     <div class="col col-sm-4" style="text-align:center">
-                                        <label>Show On Profile</label>
+                                        <label>@DigitalBusinessCard.Language.Localization.showon</label>
                                         @Html.CheckBoxFor(x => x.ShowTiktok, new { @class = "form-control" })
                                     </div>
                                 </div>       <br />
-                                <button class="btn btn-outline-success" style="width:100%">Confirm</button>
+                                             <button class="btn btn-outline-success" style="width:100%">@DigitalBusinessCard.Language.Localization.confirm</button>
                                 <br />
                             </div>
                         </div>
@@ -523,7 +505,7 @@
                     <div class="modal-dialog">
                         <div class="modal-content">
                             <div class="modal-header">
-                                <h2 class="modal-title"> Youtube </h2>
+                                <h2 class="modal-title"> @DigitalBusinessCard.Language.Localization.youtube </h2>
                             </div>
                             <div class="modal-body">
 
@@ -531,17 +513,17 @@
 
                                 <div class="row">
                                     <div class="col col-sm-6">
-                                        <label>Youtube</label>
-                                        @Html.TextBoxFor(x => x.Youtube, new { @class = "form-control" })
+                                        <label>@DigitalBusinessCard.Language.Localization.link</label>
+                                        @Html.TextBoxFor(x => x.Youtube, new { @class = "form-control", placeholder = "youtube.com/********" })
 
 
                                     </div>
                                     <div class="col col-sm-4" style="text-align:center">
-                                        <label>Show On Profile</label>
+                                        <label>@DigitalBusinessCard.Language.Localization.showon</label>
                                         @Html.CheckBoxFor(x => x.ShowYoutube, new { @class = "form-control" })
                                     </div>
                                 </div>         <br />
-                                <button class="btn btn-outline-success" style="width:100%">Confirm</button>
+                                               <button class="btn btn-outline-success" style="width:100%">@DigitalBusinessCard.Language.Localization.confirm</button>
                                 <br />
                             </div>
                         </div>
@@ -551,24 +533,24 @@
                     <div class="modal-dialog">
                         <div class="modal-content">
                             <div class="modal-header">
-                                <h2 class="modal-title"> GitHub </h2>
+                                <h2 class="modal-title"> @DigitalBusinessCard.Language.Localization.github </h2>
                             </div>
                             <div class="modal-body">
 
 
                                 <div class="row">
                                     <div class="col col-sm-6">
-                                        <label>Github</label>
-                                        @Html.TextBoxFor(x => x.Github, new { @class = "form-control" })
+                                        <label>@DigitalBusinessCard.Language.Localization.link</label>
+                                        @Html.TextBoxFor(x => x.Github, new { @class = "form-control", placeholder = "github.com/********" })
 
 
                                     </div>
                                     <div class="col col-sm-4" style="text-align:center">
-                                        <label>Show On Profile</label>
+                                        <label>@DigitalBusinessCard.Language.Localization.showon</label>
                                         @Html.CheckBoxFor(x => x.ShowGithub, new { @class = "form-control" })
                                     </div>
                                 </div>   <br />
-                                <button class="btn btn-outline-success" style="width:100%">Confirm</button>
+                                         <button class="btn btn-outline-success" style="width:100%">@DigitalBusinessCard.Language.Localization.confirm</button>
                                 <br />
                             </div>
                         </div>
@@ -578,22 +560,22 @@
                     <div class="modal-dialog">
                         <div class="modal-content">
                             <div class="modal-header">
-                                <h2 class="modal-title"> Yelp </h2>
+                                <h2 class="modal-title"> @DigitalBusinessCard.Language.Localization.yelp </h2>
                             </div>
                             <div class="modal-body">
                                 <div class="row">
                                     <div class="col col-sm-6">
-                                        <label>Yelp</label>
+                                        <label>@DigitalBusinessCard.Language.Localization.link</label>
                                         @Html.TextBoxFor(x => x.Yelp, new { @class = "form-control" })
 
 
                                     </div>
                                     <div class="col col-sm-4" style="text-align:center">
-                                        <label>Show On Profile</label>
+                                        <label>@DigitalBusinessCard.Language.Localization.showon</label>
                                         @Html.CheckBoxFor(x => x.ShowYelp, new { @class = "form-control" })
                                     </div>
                                 </div> <br />
-                                <button class="btn btn-outline-success" style="width:100%">Confirm</button>
+                                       <button class="btn btn-outline-success" style="width:100%">@DigitalBusinessCard.Language.Localization.confirm</button>
                                 <br />
                             </div>
                         </div>
@@ -603,22 +585,22 @@
                     <div class="modal-dialog">
                         <div class="modal-content">
                             <div class="modal-header">
-                                <h2 class="modal-title"> Venmo </h2>
+                                <h2 class="modal-title"> @DigitalBusinessCard.Language.Localization.venmo </h2>
                             </div>
                             <div class="modal-body">
                                 <div class="row">
                                     <div class="col col-sm-6">
-                                        <label>Venmo</label>
+                                        <label>@DigitalBusinessCard.Language.Localization.walletno</label>
                                         @Html.TextBoxFor(x => x.Venmo, new { @class = "form-control" })
 
 
                                     </div>
                                     <div class="col col-sm-4" style="text-align:center">
-                                        <label>Show On Profile</label>
+                                        <label>@DigitalBusinessCard.Language.Localization.showon</label>
                                         @Html.CheckBoxFor(x => x.ShowVenmo, new { @class = "form-control" })
                                     </div>
                                 </div> <br />
-                                <button class="btn btn-outline-success" style="width:100%">Confirm</button>
+                                       <button class="btn btn-outline-success" style="width:100%">@DigitalBusinessCard.Language.Localization.confirm</button>
                                 <br />
                             </div>
                         </div>
@@ -628,23 +610,23 @@
                     <div class="modal-dialog">
                         <div class="modal-content">
                             <div class="modal-header">
-                                <h2 class="modal-title"> Paypal </h2>
+                                <h2 class="modal-title"> @DigitalBusinessCard.Language.Localization.paypal </h2>
                             </div>
                             <div class="modal-body">
 
                                 <div class="row">
                                     <div class="col col-sm-6">
-                                        <label>Paypal</label>
+                                        <label>@DigitalBusinessCard.Language.Localization.walletno</label>
                                         @Html.TextBoxFor(x => x.Paypal, new { @class = "form-control" })
 
 
                                     </div>
                                     <div class="col col-sm-4" style="text-align:center">
-                                        <label>Show On Profile</label>
+                                        <label>@DigitalBusinessCard.Language.Localization.showon</label>
                                         @Html.CheckBoxFor(x => x.ShowPaypal, new { @class = "form-control" })
                                     </div>
                                 </div> <br />
-                                <button class="btn btn-outline-success" style="width:100%">Confirm</button>
+                                       <button class="btn btn-outline-success" style="width:100%">@DigitalBusinessCard.Language.Localization.confirm</button>
                                 <br />
                             </div>
                         </div>
@@ -654,24 +636,24 @@
                     <div class="modal-dialog">
                         <div class="modal-content">
                             <div class="modal-header">
-                                <h2 class="modal-title"> Cashapp </h2>
+                                <h2 class="modal-title"> @DigitalBusinessCard.Language.Localization.cashapp </h2>
                             </div>
                             <div class="modal-body">
 
 
                                 <div class="row">
                                     <div class="col col-sm-6">
-                                        <label>Cashapp  </label>
+                                        <label>@DigitalBusinessCard.Language.Localization.walletno  </label>
                                         @Html.TextBoxFor(x => x.CashApp, new { @class = "form-control" })
 
 
                                     </div>
                                     <div class="col col-sm-4" style="text-align:center">
-                                        <label>Show On Profile</label>
+                                        <label>@DigitalBusinessCard.Language.Localization.showon</label>
                                         @Html.CheckBoxFor(x => x.ShowCashApp, new { @class = "form-control" })
                                     </div>
                                 </div><br />
-                                <button class="btn btn-outline-success" style="width:100%">Confirm</button>
+                                      <button class="btn btn-outline-success" style="width:100%">@DigitalBusinessCard.Language.Localization.confirm</button>
                                 <br />
                             </div>
                         </div>
@@ -681,23 +663,23 @@
                     <div class="modal-dialog">
                         <div class="modal-content">
                             <div class="modal-header">
-                                <h2 class="modal-title"> Discord </h2>
+                                <h2 class="modal-title"> @DigitalBusinessCard.Language.Localization.discord </h2>
                             </div>
                             <div class="modal-body">
 
                                 <div class="row">
                                     <div class="col col-sm-6">
-                                        <label>Discord</label>
-                                        @Html.TextBoxFor(x => x.Discord, new { @class = "form-control" })
+                                        <label>@DigitalBusinessCard.Language.Localization.discord</label>
+                                        @Html.TextBoxFor(x => x.Discord, new { @class = "form-control", placeholder = "username-#1234" })
 
 
                                     </div>
                                     <div class="col col-sm-4" style="text-align:center">
-                                        <label>Show On Profile</label>
+                                        <label>@DigitalBusinessCard.Language.Localization.showon</label>
                                         @Html.CheckBoxFor(x => x.ShowDiscord, new { @class = "form-control" })
                                     </div>
                                 </div><br />
-                                <button class="btn btn-outline-success" style="width:100%">Confirm</button>
+                                      <button class="btn btn-outline-success" style="width:100%">@DigitalBusinessCard.Language.Localization.confirm</button>
                                 <br />
                             </div>
                         </div>
@@ -707,23 +689,23 @@
                     <div class="modal-dialog">
                         <div class="modal-content">
                             <div class="modal-header">
-                                <h2 class="modal-title"> Skype </h2>
+                                <h2 class="modal-title"> @DigitalBusinessCard.Language.Localization.skype </h2>
                             </div>
                             <div class="modal-body">
 
                                 <div class="row">
                                     <div class="col col-sm-6">
-                                        <label>Skype</label>
-                                        @Html.TextBoxFor(x => x.Skype, new { @class = "form-control" })
+                                        <label>@DigitalBusinessCard.Language.Localization.link</label>
+                                        @Html.TextBoxFor(x => x.Skype, new { @class = "form-control"  })
 
 
                                     </div>
                                     <div class="col col-sm-4" style="text-align:center">
-                                        <label>Show On Profile</label>
+                                        <label>@DigitalBusinessCard.Language.Localization.showon</label>
                                         @Html.CheckBoxFor(x => x.ShowSkype, new { @class = "form-control" })
                                     </div>
                                 </div> <br />
-                                <button class="btn btn-outline-success" style="width:100%">Confirm</button>
+                                       <button class="btn btn-outline-success" style="width:100%">@DigitalBusinessCard.Language.Localization.confirm</button>
                                 <br />
                             </div>
                         </div>
@@ -733,7 +715,7 @@
                     <div class="modal-dialog">
                         <div class="modal-content">
                             <div class="modal-header">
-                                <h2 class="modal-title"> Signal </h2>
+                                <h2 class="modal-title"> @DigitalBusinessCard.Language.Localization.signal </h2>
                             </div>
                             <div class="modal-body">
 
@@ -741,17 +723,17 @@
 
                                 <div class="row">
                                     <div class="col col-sm-6">
-                                        <label>Signal</label>
-                                        @Html.TextBoxFor(x => x.Signal, new { @class = "form-control" })
+                                        <label>@DigitalBusinessCard.Language.Localization.number</label>
+                                        @Html.TextBoxFor(x => x.Signal, new { @class = "form-control", placeholder = "+90*********" })
 
 
                                     </div>
                                     <div class="col col-sm-4" style="text-align:center">
-                                        <label>Show On Profile</label>
+                                        <label>@DigitalBusinessCard.Language.Localization.showon</label>
                                         @Html.CheckBoxFor(x => x.ShowSignal, new { @class = "form-control" })
                                     </div>
                                 </div> <br />
-                                <button class="btn btn-outline-success" style="width:100%">Confirm</button>
+                                       <button class="btn btn-outline-success" style="width:100%">@DigitalBusinessCard.Language.Localization.confirm</button>
                                 <br />
                             </div>
                         </div>
@@ -762,23 +744,23 @@
                     <div class="modal-dialog">
                         <div class="modal-content">
                             <div class="modal-header">
-                                <h2 class="modal-title"> Telegram </h2>
+                                <h2 class="modal-title"> @DigitalBusinessCard.Language.Localization.telegram </h2>
                             </div>
                             <div class="modal-body">
 
                                 <div class="row">
                                     <div class="col col-sm-6">
-                                        <label>Telegram</label>
-                                        @Html.TextBoxFor(x => x.Telegram, new { @class = "form-control" })
+                                        <label>@DigitalBusinessCard.Language.Localization.number</label>
+                                        @Html.TextBoxFor(x => x.Telegram, new { @class = "form-control", placeholder = "+90*********" })
 
 
                                     </div>
                                     <div class="col col-sm-4" style="text-align:center">
-                                        <label>Show On Profile</label>
+                                        <label>@DigitalBusinessCard.Language.Localization.showon</label>
                                         @Html.CheckBoxFor(x => x.ShowTelegram, new { @class = "form-control" })
                                     </div>
                                 </div><br />
-                                <button class="btn btn-outline-success" style="width:100%">Confirm</button>
+                                      <button class="btn btn-outline-success" style="width:100%">@DigitalBusinessCard.Language.Localization.confirm</button>
                                 <br />
                             </div>
                         </div>
@@ -789,23 +771,23 @@
                     <div class="modal-dialog">
                         <div class="modal-content">
                             <div class="modal-header">
-                                <h2 class="modal-title"> Twitch </h2>
+                                <h2 class="modal-title"> @DigitalBusinessCard.Language.Localization.twitch </h2>
                             </div>
                             <div class="modal-body">
 
                                 <div class="row">
                                     <div class="col col-sm-6">
-                                        <label>Twitch</label>
+                                        <label>@DigitalBusinessCard.Language.Localization.link</label>
                                         @Html.TextBoxFor(x => x.Twitch, new { @class = "form-control" })
 
 
                                     </div>
                                     <div class="col col-sm-4" style="text-align:center">
-                                        <label>Show On Profile</label>
+                                        <label>@DigitalBusinessCard.Language.Localization.showon</label>
                                         @Html.CheckBoxFor(x => x.ShowTwitch, new { @class = "form-control" })
                                     </div>
                                 </div><br />
-                                <button class="btn btn-outline-success" style="width:100%">Confirm</button>
+                                      <button class="btn btn-outline-success" style="width:100%">@DigitalBusinessCard.Language.Localization.confirm</button>
                                 <br />
                             </div>
                         </div>
@@ -815,23 +797,23 @@
                     <div class="modal-dialog">
                         <div class="modal-content">
                             <div class="modal-header">
-                                <h2 class="modal-title"> Viber </h2>
+                                <h2 class="modal-title"> @DigitalBusinessCard.Language.Localization.viber </h2>
                             </div>
                             <div class="modal-body">
 
                                 <div class="row">
                                     <div class="col col-sm-6">
-                                        <label>Viber</label>
-                                        @Html.TextBoxFor(x => x.Viber, new { @class = "form-control" })
+                                        <label>@DigitalBusinessCard.Language.Localization.number</label>
+                                        @Html.TextBoxFor(x => x.Viber, new { @class = "form-control", placeholder = "+90*********" })
 
 
                                     </div>
                                     <div class="col col-sm-4" style="text-align:center">
-                                        <label>Show On Profile</label>
+                                        <label>@DigitalBusinessCard.Language.Localization.showon</label>
                                         @Html.CheckBoxFor(x => x.ShowViber, new { @class = "form-control" })
                                     </div>
                                 </div><br />
-                                <button class="btn btn-outline-success" style="width:100%">Confirm</button>
+                                      <button class="btn btn-outline-success" style="width:100%">@DigitalBusinessCard.Language.Localization.confirm</button>
                                 <br />
                             </div>
                         </div>
@@ -841,23 +823,23 @@
                     <div class="modal-dialog">
                         <div class="modal-content">
                             <div class="modal-header">
-                                <h2 class="modal-title"> Wechat </h2>
+                                <h2 class="modal-title"> @DigitalBusinessCard.Language.Localization.wechat </h2>
                             </div>
                             <div class="modal-body">
 
                                 <div class="row">
                                     <div class="col col-sm-6">
-                                        <label>WeChat</label>
+                                        <label>@DigitalBusinessCard.Language.Localization.wechat</label>
                                         @Html.TextBoxFor(x => x.Wechat, new { @class = "form-control" })
 
 
                                     </div>
                                     <div class="col col-sm-4" style="text-align:center">
-                                        <label>Show On Profile</label>
+                                        <label>@DigitalBusinessCard.Language.Localization.showon</label>
                                         @Html.CheckBoxFor(x => x.ShowWechat, new { @class = "form-control" })
                                     </div>
                                 </div><br />
-                                <button class="btn btn-outline-success" style="width:100%">Confirm</button>
+                                      <button class="btn btn-outline-success" style="width:100%">@DigitalBusinessCard.Language.Localization.confirm</button>
                                 <br />
                             </div>
                         </div>
@@ -867,23 +849,23 @@
                     <div class="modal-dialog">
                         <div class="modal-content">
                             <div class="modal-header">
-                                <h2 class="modal-title"> Bitcoin </h2>
+                                <h2 class="modal-title"> @DigitalBusinessCard.Language.Localization.bitcoin </h2>
                             </div>
                             <div class="modal-body">
 
                                 <div class="row">
                                     <div class="col col-sm-6">
-                                        <label>Bitcoin</label>
+                                        <label>@DigitalBusinessCard.Language.Localization.walletno</label>
                                         @Html.TextBoxFor(x => x.Bitcoin, new { @class = "form-control" })
 
 
                                     </div>
                                     <div class="col col-sm-4" style="text-align:center">
-                                        <label>Show On Profile</label>
+                                        <label>@DigitalBusinessCard.Language.Localization.showon</label>
                                         @Html.CheckBoxFor(x => x.ShowBitcoin, new { @class = "form-control" })
                                     </div>
                                 </div><br />
-                                <button class="btn btn-outline-success" style="width:100%">Confirm</button>
+                                      <button class="btn btn-outline-success" style="width:100%">@DigitalBusinessCard.Language.Localization.confirm</button>
                                 <br />
                             </div>
                         </div>
@@ -893,23 +875,23 @@
                     <div class="modal-dialog">
                         <div class="modal-content">
                             <div class="modal-header">
-                                <h2 class="modal-title"> Ethereum </h2>
+                                <h2 class="modal-title"> @DigitalBusinessCard.Language.Localization.eth </h2>
                             </div>
                             <div class="modal-body">
 
                                 <div class="row">
                                     <div class="col col-sm-6">
-                                        <label>Ethereum</label>
+                                        <label>@DigitalBusinessCard.Language.Localization.ethwal</label>
                                         @Html.TextBoxFor(x => x.Ethereum, new { @class = "form-control" })
 
 
                                     </div>
                                     <div class="col col-sm-4" style="text-align:center">
-                                        <label>Show On Profile</label>
+                                        <label>@DigitalBusinessCard.Language.Localization.showon</label>
                                         @Html.CheckBoxFor(x => x.ShowEthereum, new { @class = "form-control" })
                                     </div>
                                 </div><br />
-                                <button class="btn btn-outline-success" style="width:100%">Confirm</button>
+                                      <button class="btn btn-outline-success" style="width:100%">@DigitalBusinessCard.Language.Localization.confirm</button>
                                 <br />
                             </div>
                         </div>
@@ -919,23 +901,23 @@
                     <div class="modal-dialog">
                         <div class="modal-content">
                             <div class="modal-header">
-                                <h2 class="modal-title"> Crypto Wallet </h2>
+                                <h2 class="modal-title"> @DigitalBusinessCard.Language.Localization.crypto </h2>
                             </div>
                             <div class="modal-body">
 
                                 <div class="row">
                                     <div class="col col-sm-6">
-                                        <label>Wallet No</label>
+                                        <label>@DigitalBusinessCard.Language.Localization.walletno</label>
                                         @Html.TextBoxFor(x => x.Crypto, new { @class = "form-control" })
 
 
                                     </div>
                                     <div class="col col-sm-4" style="text-align:center">
-                                        <label>Show On Profile</label>
+                                        <label>@DigitalBusinessCard.Language.Localization.showon</label>
                                         @Html.CheckBoxFor(x => x.ShowCrypto, new { @class = "form-control" })
                                     </div>
                                 </div><br />
-                                <button class="btn btn-outline-success" style="width:100%">Confirm</button>
+                                      <button class="btn btn-outline-success" style="width:100%">@DigitalBusinessCard.Language.Localization.confirm</button>
                                 <br />
                             </div>
                         </div>
@@ -945,29 +927,107 @@
                     <div class="modal-dialog">
                         <div class="modal-content">
                             <div class="modal-header">
-                                <h2 class="modal-title"> IBAN </h2>
+                                <h2 class="modal-title"> @DigitalBusinessCard.Language.Localization.iban </h2>
                             </div>
                             <div class="modal-body">
 
                                 <div class="row">
                                     <div class="col col-sm-6">
-                                        <label>IBAN</label>
+                                        <label>@DigitalBusinessCard.Language.Localization.no</label>
                                         @Html.TextBoxFor(x => x.IBAN, new { @class = "form-control" })
 
 
                                     </div>
                                     <div class="col col-sm-4" style="text-align:center">
-                                        <label>Show On Profile</label>
+                                        <label>@DigitalBusinessCard.Language.Localization.showon</label>
                                         @Html.CheckBoxFor(x => x.ShowIBAN, new { @class = "form-control" })
                                     </div>
                                 </div><br />
-                                <button class="btn btn-outline-success" style="width:100%">Confirm</button>
+                                      <button class="btn btn-outline-success" style="width:100%">@DigitalBusinessCard.Language.Localization.confirm</button>
                                 <br />
                             </div>
                         </div>
                     </div>
                 </div>
-                <h1 style="text-align:center;font-weight:600">My Card</h1>
+                <div class="modal" id="Modal31">
+                    <div class="modal-dialog">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <h2 class="modal-title"> @DigitalBusinessCard.Language.Localization.lovcen </h2>
+                            </div>
+                            <div class="modal-body">
+
+                                <div class="row">
+                                    <div class="col col-sm-6">
+                                        <label>@DigitalBusinessCard.Language.Localization.iban</label>
+                                        @Html.TextBoxFor(x => x.Lovcen, new { @class = "form-control" })
+
+
+                                    </div>
+                                    <div class="col col-sm-4" style="text-align:center">
+                                        <label>@DigitalBusinessCard.Language.Localization.showon</label>
+                                        @Html.CheckBoxFor(x => x.ShowLovcen, new { @class = "form-control" })
+                                    </div>
+                                </div><br />
+                                      <button class="btn btn-outline-success" style="width:100%">@DigitalBusinessCard.Language.Localization.confirm</button>
+                                <br />
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="modal" id="Modal32">
+                    <div class="modal-dialog">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <h2 class="modal-title"> @DigitalBusinessCard.Language.Localization.ziraat </h2>
+                            </div>
+                            <div class="modal-body">
+
+                                <div class="row">
+                                    <div class="col col-sm-6">
+                                        <label>@DigitalBusinessCard.Language.Localization.iban</label>
+                                        @Html.TextBoxFor(x => x.Ziraat, new { @class = "form-control" })
+
+
+                                    </div>
+                                    <div class="col col-sm-4" style="text-align:center">
+                                        <label>@DigitalBusinessCard.Language.Localization.showon</label>
+                                        @Html.CheckBoxFor(x => x.ShowZiraat, new { @class = "form-control" })
+                                    </div>
+                                </div><br />
+                                      <button class="btn btn-outline-success" style="width:100%">@DigitalBusinessCard.Language.Localization.confirm</button>
+                                <br />
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="modal" id="Modal33">
+                    <div class="modal-dialog">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <h2 class="modal-title"> @DigitalBusinessCard.Language.Localization.ckb   </h2>
+                            </div>
+                            <div class="modal-body">
+
+                                <div class="row">
+                                    <div class="col col-sm-6">
+                                        <label>@DigitalBusinessCard.Language.Localization.iban</label>
+                                        @Html.TextBoxFor(x => x.CKB, new { @class = "form-control" })
+
+
+                                    </div>
+                                    <div class="col col-sm-4" style="text-align:center">
+                                        <label>@DigitalBusinessCard.Language.Localization.showon</label>
+                                        @Html.CheckBoxFor(x => x.ShowCKB, new { @class = "form-control" })
+                                    </div>
+                                </div><br />
+                                      <button class="btn btn-outline-success" style="width:100%">@DigitalBusinessCard.Language.Localization.confirm</button>
+                                <br />
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <h1 style="text-align:center;font-weight:600">@DigitalBusinessCard.Language.Localization.mycard</h1>
                 <br />
                 if (ViewBag.photo == null)
                 {
@@ -992,27 +1052,27 @@
 
                 <div class="row">
                     <div class="col ">
-                        <label>Name</label>
+                        <label>@DigitalBusinessCard.Language.Localization.name</label>
                         @Html.TextBoxFor(x => x.Name, new { @class = "form-control" })
                     </div>
                     <div class="col">
-                        <label>Surname</label>
+                        <label>@DigitalBusinessCard.Language.Localization.surname</label>
                         @Html.TextBoxFor(x => x.Surname, new { @class = "form-control" })
                     </div>
                 </div>
                 <br />
                 <div class="row">
                     <div class="col ">
-                        <label>Title</label>
+                        <label>@DigitalBusinessCard.Language.Localization.title</label>
                         @Html.TextBoxFor(x => x.Title, new { @class = "form-control" })
                     </div>
                     <div class="col">
-                        <label>Company</label>
+                        <label>@DigitalBusinessCard.Language.Localization.company</label>
                         @Html.TextBoxFor(x => x.Company, new { @class = "form-control" })
                     </div>
                 </div>
                 <br />
-                <h3 style="font-weight:600;text-align:center;">Communication</h3>
+                <h3 style="font-weight:600;text-align:center;">@DigitalBusinessCard.Language.Localization.comm</h3>
                 <div id="gridBox2">
 
                     <div id="box2">
@@ -1069,7 +1129,7 @@
 
                 </div>
                 <br />
-                <h3 style="font-weight:600;text-align:center;">Social Media</h3>
+                <h3 style="font-weight:600;text-align:center;">@DigitalBusinessCard.Language.Localization.media</h3>
 
                 <div id="gridBox2">
                     <div id="box2">
@@ -1099,7 +1159,7 @@
                     </div>
                 </div>
                 <br />
-                <h3 style="font-weight:600;text-align:center;">Finance</h3>
+                <h3 style="font-weight:600;text-align:center;">@DigitalBusinessCard.Language.Localization.finance</h3>
                 <div id="gridBox2">
                     <div id="box2">
                         <button type="button" id="editCard" data-toggle="modal" data-target="#Modal18"> <img src="~/Content/images/paypal.png" /></button>
@@ -1117,11 +1177,21 @@
                     </div><div id="box2">
                         <button type="button" id="editCard" data-toggle="modal" data-target="#Modal30"> <img src="~/Content/images/iban.png" /></button>
                     </div>
-                </div>
+                    <div id="box2">
+                        <button type="button" id="editCard" data-toggle="modal" data-target="#Modal31"> <img src="~/Content/images/lovcen.png" /></button>
+                    </div>
+                    <div id="box2">
+                        <button type="button" id="editCard" data-toggle="modal" data-target="#Modal32"> <img src="~/Content/images/ziraat.png" /></button>
+                    </div>
+                    <div id="box2">
+                        <button type="button" id="editCard" data-toggle="modal" data-target="#Modal33"> <img src="~/Content/images/ckb.png" /></button>
+                    </div>
 
+                </div>
+                
 
                 <br />
-                <button class="btn btn-outline-dark" style="width:100%; margin-bottom:2vh;">Save</button>
+                <button class="btn btn-outline-dark" style="width:100%; margin-bottom:2vh;">@DigitalBusinessCard.Language.Localization.save</button>
             }
 
             <div id="backgroundDiv" style="background-color: #F4F6F9 !important;"></div>

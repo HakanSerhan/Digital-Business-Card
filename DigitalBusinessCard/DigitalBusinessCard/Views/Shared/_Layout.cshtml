@@ -35,7 +35,7 @@
 
 
 </head>
-<body class="hold-transition sidebar-mini layout-fixed">
+<body class="sidebar-mini sidebar-collapse sidebar-closed">
     @if (User.IsInRole("SuperAdmin") || User.IsInRole("Admin") || User.IsInRole("Customer"))
     {
 
@@ -46,17 +46,35 @@
                 <img class="animation__shake" src="https://upload.wikimedia.org/wikipedia/commons/f/f2/BNC_logo_2021.png" alt="logo" height="60" width="60">
             </div>
 
-            <nav class="main-header navbar navbar-expand navbar-white navbar-light">
+            <nav class="main-header navbar navbar-expand navbar-light navbar-white">
 
                 <ul class="navbar-nav">
                     <li class="nav-item">
                         <a class="nav-link" data-widget="pushmenu" href="#" role="button"><i class="fas fa-bars"></i></a>
                     </li>
-                  
+
                 </ul>
-                <ul class="navbar-nav ml-auto">
+
+                <div class="navbar-nav ml-auto" style="margin-right:15px;">
+                    <div class="dropdown">
+                        <a class="btn btn-outline-dark dropdown-toggle" data-toggle="dropdown">@DigitalBusinessCard.Language.Localization.lang</a>
+                        <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                            @Html.ActionLink("Türkçe", "ChangeLanguage", "User", new
+             { selectedlanguage = "tr", link = Request.Url.AbsoluteUri }, new { @class = "dropdown-item" })
+                            @Html.ActionLink("English", "ChangeLanguage", "User",
+                            new { selectedlanguage = "en", link = Request.Url.AbsoluteUri }, new { @class = "dropdown-item" })
+                            @Html.ActionLink("Russian", "ChangeLanguage", "User",
+                           new { selectedlanguage = "ru", link = Request.Url.AbsoluteUri }, new { @class = "dropdown-item" })
+                            @Html.ActionLink("Montenegro", "ChangeLanguage", "User",
+                           new { selectedlanguage = "cnr", link = Request.Url.AbsoluteUri }, new { @class = "dropdown-item" })
+                        </div>
+                    </div>
+                  
+                </div>
+
+                <ul class="navbar-nav ml">
                     <li>
-                        <button type="button" class="btn btn-outline-dark" onclick="Logout()">Log Out</button>
+                        <button type="button" class="btn btn-outline-dark" onclick="Logout()">@DigitalBusinessCard.Language.Localization.logout</button>
 
                     </li>
                 </ul>
@@ -64,7 +82,7 @@
 
             <aside class="main-sidebar sidebar-light-white elevation-4">
 
-                <a href="/BusinessCard/redirectMyCard" class="brand-link">
+                <a href="/home" class="brand-link">
                     <img src="https://upload.wikimedia.org/wikipedia/commons/f/f2/BNC_logo_2021.png" alt="Logo" class="brand-image" style="opacity: .8; margin:0">
                     <span class="brand-text font-weight-bolder" style="margin-left:20px"> Dodir-Panel </span>
                 </a>
@@ -77,7 +95,7 @@
 
                         <div class="form-inline">
                             <div class="input-group" data-widget="sidebar-search">
-                                <input class="form-control form-control-sidebar" type="search" placeholder="Search" aria-label="Search">
+                                <input class="form-control form-control-sidebar" type="search" placeholder="@DigitalBusinessCard.Language.Localization.search" aria-label="Search">
                                 <div class="input-group-append">
                                     <button class="btn btn-sidebar">
                                         <i class="fas fa-search fa-fw"></i>
@@ -86,57 +104,57 @@
                             </div>
                         </div>
 
-                      
 
-                            <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
-                                @if (User.IsInRole("SuperAdmin") || User.IsInRole("Admin"))
-                                {
-                                    <li class="nav-item">
-                                        <a href="/User/Index/" class="nav-link">
-                                            <i class="nav-icon fas fa-users"></i>
-                                            <p>
-                                                Users
-                                            </p>
-                                        </a>
-                                    </li>
-                                }
+
+                        <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
+                            @if (User.IsInRole("SuperAdmin") || User.IsInRole("Admin"))
+                            {
                                 <li class="nav-item">
-                                    <a href="/BusinessCard/redirectMyCard/" class="nav-link">
-                                        <i class="nav-icon fas fa-id-card"></i>
+                                    <a href="/User/Index/" class="nav-link">
+                                        <i class="nav-icon fas fa-users"></i>
                                         <p>
-                                            My Card
+                                            @DigitalBusinessCard.Language.Localization.users
                                         </p>
                                     </a>
                                 </li>
-                                <li class="nav-item">
-                                    <a href="/User/MyAccount/" class="nav-link">
-                                        <i class="nav-icon fas fa-user"></i>
-                                        <p>
-                                            Account
-                                        </p>
-                                    </a>
-                                </li>
+                            }
+                            <li class="nav-item">
+                                <a href="/BusinessCard/redirectMyCard/" class="nav-link">
+                                    <i class="nav-icon fas fa-id-card"></i>
+                                    <p>
+                                        @DigitalBusinessCard.Language.Localization.mycard
+                                    </p>
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="/User/MyAccount/" class="nav-link">
+                                    <i class="nav-icon fas fa-user"></i>
+                                    <p>
+                                        @DigitalBusinessCard.Language.Localization.account
+                                    </p>
+                                </a>
+                            </li>
 
 
-                                <li>
+                            <li>
 
-                                </li>
+                            </li>
 
 
-                            </ul>
+                        </ul>
 
-                        </nav>
+                    </nav>
 
                 </div>
 
             </aside>
 
 
-            <div class="content-wrapper" ;>
+            <div class="content-wrapper">
 
                 <div class="content-header">
                     <div class="container-fluid">
-                     
+
                     </div>
                 </div>
 
@@ -238,7 +256,6 @@
                 });
         }</script>
 
-
     <script>
         function copyURI(evt) {
             evt.preventDefault();
@@ -248,7 +265,13 @@
                 /* clipboard write failed */
             });
         }
-
+        function copyToClipboard(text) {
+            navigator.clipboard.writeText(text)
+                .then(() => {
+                })
+                .catch((error) => {
+                });
+        }
     </script>
 
 </body>

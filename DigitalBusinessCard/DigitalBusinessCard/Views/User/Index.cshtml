@@ -10,28 +10,28 @@
     <div class="modal-dialog">
         <div class="modal-content">
             <div class="modal-header">
-                <h2 class="modal-title"> New User </h2>
+                <h2 class="modal-title"> @DigitalBusinessCard.Language.Localization.newuser </h2>
             </div>
             <form method="post" action="/User/NewUser">
                 <div class="modal-body">
-                    <label>Username</label>
+                    <label>@DigitalBusinessCard.Language.Localization.usernam</label>
                     @*@Html.TextBoxFor(x => x.UserName, new { @class = "form-control" })*@
                     <input class="form-control" data-val="true" data-val-length="UserName alanı uzunluğu en fazla 80 olan bir dize olmalıdır." data-val-length-max="80" id="UserName" name="UserName" type="text" value="">
-                    <label>E-Mail</label>
+                    <label>@DigitalBusinessCard.Language.Localization.email</label>
                     @*@Html.TextBoxFor(x => x.Email, new { @class = "form-control" })*@
                     <input class="form-control" data-val="true" data-val-length="Email alanı uzunluğu en fazla 80 olan bir dize olmalıdır." data-val-length-max="80" id="Email" name="Email" type="text" value="">
-                    <label>Activation Code</label>
+                    <label>@DigitalBusinessCard.Language.Localization.activ</label>
                     @*@Html.TextBoxFor(x => x.Password, new { @class = "form-control" })*@
                     <input class="form-control" data-val="true" data-val-length="Password alanı uzunluğu en fazla 80 olan bir dize olmalıdır." data-val-length-max="80" id="Password" name="Password" type="text" value="">
-                    <label>User Role</label>
+                    <label>@DigitalBusinessCard.Language.Localization.userrole</label>
                     @*@Html.TextBoxFor(x => x.UserRole, new { @class = "form-control" })*@
                     <input class="form-control" id="UserRole" name="UserRole" type="text" value="">
-                    <label>Verified</label>
+                    <label>@DigitalBusinessCard.Language.Localization.verified</label>
                     @*@Html.CheckBoxFor(x => x.Verified, new { @class = "form-control" })*@
                     <input class="form-control" data-val="true" data-val-required="Verified alanı gereklidir." id="Verified" name="Verified" type="checkbox" value="true">
 
                     <br />
-                    <button class="btn btn-outline-dark" style="width:100%;">Save</button>
+                    <button class="btn btn-outline-dark" style="width:100%;">@DigitalBusinessCard.Language.Localization.save</button>
                 </div>
             </form>
         </div>
@@ -48,7 +48,7 @@
 
                         <div class="card">
                             <div class="card-header">
-                                <button type="button" class="btn btn-outline-warning" data-toggle="modal" data-target="#Modal1">New User</button>
+                                <button type="button" class="btn btn-outline-warning" data-toggle="modal" data-target="#Modal1">@DigitalBusinessCard.Language.Localization.newuser</button>
                             </div>
 
                             <div class="card-body">
@@ -56,15 +56,15 @@
 
                                     <thead>
                                         <tr>
-                                            <th>ID</th>
-                                            <th>Username</th>
-                                            <th>Email</th>
-                                            <th>Password</th>
-                                            <th>Verified </th>
-                                            <th>UserRole</th>
-                                            <th>Edit</th>
-                                            <th>Delete</th>
-                                            <th>Card Information</th>
+                                            <th>@DigitalBusinessCard.Language.Localization.id</th>
+                                            <th>@DigitalBusinessCard.Language.Localization.usernam</th>
+                                            <th>@DigitalBusinessCard.Language.Localization.email</th>
+                                            <th>@DigitalBusinessCard.Language.Localization.password</th>
+                                            <th>@DigitalBusinessCard.Language.Localization.verified</th>
+                                            <th>@DigitalBusinessCard.Language.Localization.userrole</th>
+                                            <th>@DigitalBusinessCard.Language.Localization.edit</th>
+                                            <th>@DigitalBusinessCard.Language.Localization.delete</th>
+                                            <th>@DigitalBusinessCard.Language.Localization.cardinfor</th>
                                         </tr>
                                     </thead>
                                     <tbody>
@@ -102,15 +102,15 @@
                                                     @*<button type="button" class="btn btn-outline-warning" data-toggle="modal" data-target="#Modal2" onclick="passData(@k.UserID)">Ed.tttt</button>*@
 
                                                     <a href="/User/EditUser/@k.UserID"
-                                                       class="btn btn-outline-secondary"> Edit  </a>
+                                                       class="btn btn-outline-secondary"> @DigitalBusinessCard.Language.Localization.edit  </a>
                                                 </td>
                                                 <td>
                                                     <a href="/User/DeleteUser/@k.UserID"
-                                                       class="btn btn-outline-danger"> Delete  </a>
+                                                       class="btn btn-outline-danger"> @DigitalBusinessCard.Language.Localization.delete  </a>
                                                 </td>
                                                 <td>
                                                     <a href="/Card/@k.UserID"
-                                                       class="btn btn-outline-primary">Card Info</a>
+                                                       class="btn btn-outline-primary">@DigitalBusinessCard.Language.Localization.cardinfo</a>
                                                 </td>
 
                                             </tr>

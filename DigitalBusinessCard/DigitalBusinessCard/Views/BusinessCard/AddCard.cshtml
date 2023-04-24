@@ -7,25 +7,25 @@
 @if (ViewBag.urn == ViewBag.nagme || User.IsInRole("SuperAdmin") || User.IsInRole("Admin"))
 {
     <form method="post" action="/BusinessCard/AddCard">
-        <h2 style="text-align:center;font-weight:600;">Please Fill Your Basic Visit Card Information</h2>
+        <h2 style="text-align:center;font-weight:600;">@DigitalBusinessCard.Language.Localization.please</h2>
         <br />
-        <label>Name</label>
+        <label>@DigitalBusinessCard.Language.Localization.name</label>
         @*@Html.TextBoxFor(x => x.UserName, new { @class = "form-control" })*@
         <input class="form-control" data-val="true" data-val-length="Name alanı uzunluğu en fazla 80 olan bir dize olmalıdır." data-val-length-max="80" id="Name" name="Name" type="text" value="">
-        <label>Surname</label>
+        <label>@DigitalBusinessCard.Language.Localization.surname</label>
         @*@Html.TextBoxFor(x => x.UserName, new { @class = "form-control" })*@
         <input class="form-control" data-val="true" data-val-length="Surname alanı uzunluğu en fazla 80 olan bir dize olmalıdır." data-val-length-max="80" id="Surname" name="Surname" type="text" value="">
-        <label>Title</label>
+        <label>@DigitalBusinessCard.Language.Localization.title</label>
         @*@Html.TextBoxFor(x => x.UserName, new { @class = "form-control" })*@
         <input class="form-control" data-val="true" data-val-length="Title alanı uzunluğu en fazla 80 olan bir dize olmalıdır." data-val-length-max="80" id="Title" name="Title" type="text" value="">
-        <label>Company</label>
+        <label>@DigitalBusinessCard.Language.Localization.company</label>
         @*@Html.TextBoxFor(x => x.UserName, new { @class = "form-control" })*@
         <input class="form-control" data-val="true" data-val-length="Company alanı uzunluğu en fazla 80 olan bir dize olmalıdır." data-val-length-max="80" id="Company" name="Company" type="text" value="">
 
         <input class="form-control" id="UserID" name="UserID" type="text" value="@ViewBag.userid" style="visibility:hidden" readonly:readonly>
 
         <br />
-        <button class="btn btn-outline-dark" style="width:100%;">Confirm</button>
+        <button class="btn btn-outline-dark" style="width:100%;">@DigitalBusinessCard.Language.Localization.confirm</button>
     </form>
 }
 else

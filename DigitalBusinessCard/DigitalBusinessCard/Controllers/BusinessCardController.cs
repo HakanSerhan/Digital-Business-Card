@@ -20,7 +20,7 @@ namespace DigitalBusinessCard.Controllers
 
     public class BusinessCardController : Controller
     {
-     
+
         Context c = new Context();
         // GET: BusinessCard
         public ActionResult CardProfile(int id)
@@ -29,11 +29,16 @@ namespace DigitalBusinessCard.Controllers
             var deger = c.Userss.Find(id);
             ViewBag.urn = Current.Cname;
             ViewBag.cid = Current.Cid;
-            ViewBag.qrcard = 
-            ViewBag.nagme = deger.UserName;
+
+            if (deger!= null)
+            {
+                ViewBag.nagme = deger.UserName;
+
+            }
+
             if (carddeger.Count == 0)
             {
-               return RedirectToAction("AddCard",new { id = id });
+                return RedirectToAction("AddCard", new { id = id });
             }
             else
             {
@@ -42,7 +47,8 @@ namespace DigitalBusinessCard.Controllers
             }
 
         }
-      
+
+
         public ActionResult VCF(int id)
         {
             const string text_x_vcard = "text/x-vcard";
@@ -218,8 +224,16 @@ namespace DigitalBusinessCard.Controllers
 
         public ActionResult redirectMyCard()
         {
+            try
+            {
+                return RedirectToAction("CardProfile", "BusinessCard", new { id = Current.Cid });
 
-            return RedirectToAction("CardProfile", "BusinessCard", new { id = Current.Cid });
+            }
+            catch (Exception)
+            {
+                return RedirectToAction("Login", "User");
+
+            }
 
         }
         public ActionResult Error()

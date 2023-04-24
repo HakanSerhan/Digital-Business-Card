@@ -29,7 +29,7 @@
 <body>
 
     <div class="limiter">
-        <div class="container-login100" style="background: rgb(190,189,173); background: radial-gradient(circle, rgba(190,189,173,1) 61%, rgba(154,168,142,1) 100%);">
+        <div class="container-login100" style="background: rgb(190,189,173); background: #50e2aa;">
             <div class="wrap-login100">
                 <div class="login100-pic js-tilt" data-tilt>
                     <img src="https://upload.wikimedia.org/wikipedia/commons/f/f2/BNC_logo_2021.png" alt="IMG">
@@ -37,7 +37,7 @@
 
                 <div class="login100-form validate-form">
                     <span class="login100-form-title">
-                        Login
+                        @DigitalBusinessCard.Language.Localization.login
                     </span>
                     @using (Html.BeginForm("Login", "User", FormMethod.Post))
                     {
@@ -47,7 +47,7 @@
                         <div class="form-group">
                             <input name="Password" type="password" placeholder="Password" class="form-control" />
                         </div>
-                        <input type="submit" class="btn btn-outline-success" value="Login" />
+                        <input type="submit" class="btn btn-outline-success" value="@DigitalBusinessCard.Language.Localization.login" />
                         <br />
                         <br />
                         @ViewBag.G
@@ -63,7 +63,7 @@
 
                    <div class="text-center p-t-36" style="margin-bottom:23%">
                         <a class="txt2" href="#">
-                            Get Your Card Now
+                            @DigitalBusinessCard.Language.Localization.get
                             <i class="fa fa-long-arrow-right m-l-5" aria-hidden="true"></i>
                         </a>
                     </div>

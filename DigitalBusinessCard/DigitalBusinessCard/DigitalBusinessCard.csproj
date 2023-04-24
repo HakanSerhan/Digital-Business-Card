@@ -56,6 +56,9 @@
       <HintPath>..\packages\EntityFramework.6.4.4\lib\net45\EntityFramework.SqlServer.dll</HintPath>
     </Reference>
     <Reference Include="Microsoft.CSharp" />
+    <Reference Include="Microsoft.Extensions.Localization.Abstractions, Version=7.0.5.0, Culture=neutral, PublicKeyToken=adb9793829ddae60, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Extensions.Localization.Abstractions.7.0.5\lib\net462\Microsoft.Extensions.Localization.Abstractions.dll</HintPath>
+    </Reference>
     <Reference Include="Microsoft.Extensions.Logging.Abstractions, Version=5.0.0.0, Culture=neutral, PublicKeyToken=adb9793829ddae60, processorArchitecture=MSIL">
       <HintPath>..\packages\Microsoft.Extensions.Logging.Abstractions.5.0.0\lib\net461\Microsoft.Extensions.Logging.Abstractions.dll</HintPath>
     </Reference>
@@ -172,9 +175,30 @@
     <Compile Include="Controllers\BusinessCardController.cs" />
     <Compile Include="Controllers\CardYard.cs" />
     <Compile Include="Controllers\Current.cs" />
+    <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\UserController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
+    </Compile>
+    <Compile Include="Language\Localization.cnr.Designer.cs">
+      <DependentUpon>Localization.cnr.resx</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="Language\Localization.ru.Designer.cs">
+      <DependentUpon>Localization.ru.resx</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="Language\Localization.tr.Designer.cs">
+      <DependentUpon>Localization.tr.resx</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="Language\Localization.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Localization.resx</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\Classes\BusinessCard.cs" />
@@ -184,7 +208,6 @@
     <Compile Include="Roles\AdminRoleProvider.cs" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Content\app.js" />
     <Content Include="Content\bootstrap-theme.css" />
     <Content Include="Content\bootstrap-theme.min.css" />
     <Content Include="Content\bootstrap.css" />
@@ -426,6 +449,70 @@
     <Content Include="Content\images\whatsapp.png" />
     <Content Include="Content\images\yelp.png" />
     <Content Include="Content\images\youtube.png" />
+    <Content Include="Content\images\ziraat.png" />
+    <Content Include="Content\index\about.html" />
+    <Content Include="Content\index\card.png" />
+    <Content Include="Content\index\cards-hero.png" />
+    <Content Include="Content\index\contact.html" />
+    <Content Include="Content\index\css\bootstrap.min.css" />
+    <Content Include="Content\index\css\style.css" />
+    <Content Include="Content\index\düzen.png" />
+    <Content Include="Content\index\img\about-1.jpg" />
+    <Content Include="Content\index\img\about-2.jpg" />
+    <Content Include="Content\index\img\about-3.jpg" />
+    <Content Include="Content\index\img\about-4.jpg" />
+    <Content Include="Content\index\img\bg-hero.jpg" />
+    <Content Include="Content\index\img\hero.png" />
+    <Content Include="Content\index\img\menu-1.jpg" />
+    <Content Include="Content\index\img\menu-2.jpg" />
+    <Content Include="Content\index\img\menu-3.jpg" />
+    <Content Include="Content\index\img\menu-4.jpg" />
+    <Content Include="Content\index\img\menu-5.jpg" />
+    <Content Include="Content\index\img\menu-6.jpg" />
+    <Content Include="Content\index\img\menu-7.jpg" />
+    <Content Include="Content\index\img\menu-8.jpg" />
+    <Content Include="Content\index\img\team-1.jpg" />
+    <Content Include="Content\index\img\team-2.jpg" />
+    <Content Include="Content\index\img\team-3.jpg" />
+    <Content Include="Content\index\img\team-4.jpg" />
+    <Content Include="Content\index\img\testimonial-1.jpg" />
+    <Content Include="Content\index\img\testimonial-2.jpg" />
+    <Content Include="Content\index\img\testimonial-3.jpg" />
+    <Content Include="Content\index\img\testimonial-4.jpg" />
+    <Content Include="Content\index\img\video.jpg" />
+    <Content Include="Content\index\index.html" />
+    <Content Include="Content\index\js\main.js" />
+    <Content Include="Content\index\lib\animate\animate.css" />
+    <Content Include="Content\index\lib\animate\animate.min.css" />
+    <Content Include="Content\index\lib\counterup\counterup.min.js" />
+    <Content Include="Content\index\lib\easing\easing.js" />
+    <Content Include="Content\index\lib\easing\easing.min.js" />
+    <Content Include="Content\index\lib\owlcarousel\assets\ajax-loader.gif" />
+    <Content Include="Content\index\lib\owlcarousel\assets\owl.carousel.css" />
+    <Content Include="Content\index\lib\owlcarousel\assets\owl.carousel.min.css" />
+    <Content Include="Content\index\lib\owlcarousel\assets\owl.theme.default.css" />
+    <Content Include="Content\index\lib\owlcarousel\assets\owl.theme.default.min.css" />
+    <Content Include="Content\index\lib\owlcarousel\assets\owl.theme.green.css" />
+    <Content Include="Content\index\lib\owlcarousel\assets\owl.theme.green.min.css" />
+    <Content Include="Content\index\lib\owlcarousel\assets\owl.video.play.png" />
+    <Content Include="Content\index\lib\owlcarousel\owl.carousel.js" />
+    <Content Include="Content\index\lib\owlcarousel\owl.carousel.min.js" />
+    <Content Include="Content\index\lib\tempusdominus\css\tempusdominus-bootstrap-4.css" />
+    <Content Include="Content\index\lib\tempusdominus\css\tempusdominus-bootstrap-4.min.css" />
+    <Content Include="Content\index\lib\tempusdominus\js\moment-timezone.min.js" />
+    <Content Include="Content\index\lib\tempusdominus\js\moment.min.js" />
+    <Content Include="Content\index\lib\tempusdominus\js\tempusdominus-bootstrap-4.js" />
+    <Content Include="Content\index\lib\tempusdominus\js\tempusdominus-bootstrap-4.min.js" />
+    <Content Include="Content\index\lib\waypoints\links.php" />
+    <Content Include="Content\index\lib\waypoints\waypoints.min.js" />
+    <Content Include="Content\index\lib\wow\wow.js" />
+    <Content Include="Content\index\lib\wow\wow.min.js" />
+    <Content Include="Content\index\LICENSE.txt" />
+    <Content Include="Content\index\para.png" />
+    <Content Include="Content\index\READ-ME.txt" />
+    <Content Include="Content\index\script.js" />
+    <Content Include="Content\index\service.html" />
+    <Content Include="Content\index\_import_60fbb38fb68d50.47098799_FPpreview.mp4" />
     <Content Include="Content\js\main.js" />
     <Content Include="Content\pages\calendar.html" />
     <Content Include="Content\pages\charts\chartjs.html" />
@@ -2359,9 +2446,7 @@
     <Content Include="Content\plugins\uplot\uPlot.iife.js" />
     <Content Include="Content\plugins\uplot\uPlot.iife.min.js" />
     <Content Include="Content\plugins\uplot\uPlot.min.css" />
-    <Content Include="Content\script.js" />
     <Content Include="Content\style.css" />
-    <Content Include="Content\style1.css" />
     <Content Include="Content\vendor\animate\animate.css" />
     <Content Include="Content\vendor\bootstrap\css\bootstrap-grid.css" />
     <Content Include="Content\vendor\bootstrap\css\bootstrap-grid.min.css" />
@@ -2830,6 +2915,94 @@
     <Content Include="Content\vendor\bootstrap\css\bootstrap.min.css.map" />
     <Content Include="Content\images\bitcoin - Copy.webp" />
     <Content Include="Content\images\bitcoin.webp" />
+    <Content Include="Content\index\card.webp" />
+    <Content Include="Content\index\düzen.webp" />
+    <Content Include="Content\index\lib\owlcarousel\LICENSE" />
+    <Content Include="Content\index\para.webp" />
+    <Content Include="Content\index\scss\bootstrap.scss" />
+    <Content Include="Content\index\scss\bootstrap\scss\bootstrap-grid.scss" />
+    <Content Include="Content\index\scss\bootstrap\scss\bootstrap-reboot.scss" />
+    <Content Include="Content\index\scss\bootstrap\scss\bootstrap-utilities.scss" />
+    <Content Include="Content\index\scss\bootstrap\scss\bootstrap.scss" />
+    <Content Include="Content\index\scss\bootstrap\scss\forms\_floating-labels.scss" />
+    <Content Include="Content\index\scss\bootstrap\scss\forms\_form-check.scss" />
+    <Content Include="Content\index\scss\bootstrap\scss\forms\_form-control.scss" />
+    <Content Include="Content\index\scss\bootstrap\scss\forms\_form-range.scss" />
+    <Content Include="Content\index\scss\bootstrap\scss\forms\_form-select.scss" />
+    <Content Include="Content\index\scss\bootstrap\scss\forms\_form-text.scss" />
+    <Content Include="Content\index\scss\bootstrap\scss\forms\_input-group.scss" />
+    <Content Include="Content\index\scss\bootstrap\scss\forms\_labels.scss" />
+    <Content Include="Content\index\scss\bootstrap\scss\forms\_validation.scss" />
+    <Content Include="Content\index\scss\bootstrap\scss\helpers\_clearfix.scss" />
+    <Content Include="Content\index\scss\bootstrap\scss\helpers\_colored-links.scss" />
+    <Content Include="Content\index\scss\bootstrap\scss\helpers\_position.scss" />
+    <Content Include="Content\index\scss\bootstrap\scss\helpers\_ratio.scss" />
+    <Content Include="Content\index\scss\bootstrap\scss\helpers\_stretched-link.scss" />
+    <Content Include="Content\index\scss\bootstrap\scss\helpers\_text-truncation.scss" />
+    <Content Include="Content\index\scss\bootstrap\scss\helpers\_visually-hidden.scss" />
+    <Content Include="Content\index\scss\bootstrap\scss\mixins\_alert.scss" />
+    <Content Include="Content\index\scss\bootstrap\scss\mixins\_border-radius.scss" />
+    <Content Include="Content\index\scss\bootstrap\scss\mixins\_box-shadow.scss" />
+    <Content Include="Content\index\scss\bootstrap\scss\mixins\_breakpoints.scss" />
+    <Content Include="Content\index\scss\bootstrap\scss\mixins\_buttons.scss" />
+    <Content Include="Content\index\scss\bootstrap\scss\mixins\_caret.scss" />
+    <Content Include="Content\index\scss\bootstrap\scss\mixins\_clearfix.scss" />
+    <Content Include="Content\index\scss\bootstrap\scss\mixins\_color-scheme.scss" />
+    <Content Include="Content\index\scss\bootstrap\scss\mixins\_container.scss" />
+    <Content Include="Content\index\scss\bootstrap\scss\mixins\_deprecate.scss" />
+    <Content Include="Content\index\scss\bootstrap\scss\mixins\_forms.scss" />
+    <Content Include="Content\index\scss\bootstrap\scss\mixins\_gradients.scss" />
+    <Content Include="Content\index\scss\bootstrap\scss\mixins\_grid.scss" />
+    <Content Include="Content\index\scss\bootstrap\scss\mixins\_image.scss" />
+    <Content Include="Content\index\scss\bootstrap\scss\mixins\_list-group.scss" />
+    <Content Include="Content\index\scss\bootstrap\scss\mixins\_lists.scss" />
+    <Content Include="Content\index\scss\bootstrap\scss\mixins\_pagination.scss" />
+    <Content Include="Content\index\scss\bootstrap\scss\mixins\_reset-text.scss" />
+    <Content Include="Content\index\scss\bootstrap\scss\mixins\_resize.scss" />
+    <Content Include="Content\index\scss\bootstrap\scss\mixins\_table-variants.scss" />
+    <Content Include="Content\index\scss\bootstrap\scss\mixins\_text-truncate.scss" />
+    <Content Include="Content\index\scss\bootstrap\scss\mixins\_transition.scss" />
+    <Content Include="Content\index\scss\bootstrap\scss\mixins\_utilities.scss" />
+    <Content Include="Content\index\scss\bootstrap\scss\mixins\_visually-hidden.scss" />
+    <Content Include="Content\index\scss\bootstrap\scss\utilities\_api.scss" />
+    <Content Include="Content\index\scss\bootstrap\scss\vendor\_rfs.scss" />
+    <Content Include="Content\index\scss\bootstrap\scss\_accordion.scss" />
+    <Content Include="Content\index\scss\bootstrap\scss\_alert.scss" />
+    <Content Include="Content\index\scss\bootstrap\scss\_badge.scss" />
+    <Content Include="Content\index\scss\bootstrap\scss\_breadcrumb.scss" />
+    <Content Include="Content\index\scss\bootstrap\scss\_button-group.scss" />
+    <Content Include="Content\index\scss\bootstrap\scss\_buttons.scss" />
+    <Content Include="Content\index\scss\bootstrap\scss\_card.scss" />
+    <Content Include="Content\index\scss\bootstrap\scss\_carousel.scss" />
+    <Content Include="Content\index\scss\bootstrap\scss\_close.scss" />
+    <Content Include="Content\index\scss\bootstrap\scss\_containers.scss" />
+    <Content Include="Content\index\scss\bootstrap\scss\_dropdown.scss" />
+    <Content Include="Content\index\scss\bootstrap\scss\_forms.scss" />
+    <Content Include="Content\index\scss\bootstrap\scss\_functions.scss" />
+    <Content Include="Content\index\scss\bootstrap\scss\_grid.scss" />
+    <Content Include="Content\index\scss\bootstrap\scss\_helpers.scss" />
+    <Content Include="Content\index\scss\bootstrap\scss\_images.scss" />
+    <Content Include="Content\index\scss\bootstrap\scss\_list-group.scss" />
+    <Content Include="Content\index\scss\bootstrap\scss\_mixins.scss" />
+    <Content Include="Content\index\scss\bootstrap\scss\_modal.scss" />
+    <Content Include="Content\index\scss\bootstrap\scss\_nav.scss" />
+    <Content Include="Content\index\scss\bootstrap\scss\_navbar.scss" />
+    <Content Include="Content\index\scss\bootstrap\scss\_offcanvas.scss" />
+    <Content Include="Content\index\scss\bootstrap\scss\_pagination.scss" />
+    <Content Include="Content\index\scss\bootstrap\scss\_popover.scss" />
+    <Content Include="Content\index\scss\bootstrap\scss\_progress.scss" />
+    <Content Include="Content\index\scss\bootstrap\scss\_reboot.scss" />
+    <Content Include="Content\index\scss\bootstrap\scss\_root.scss" />
+    <Content Include="Content\index\scss\bootstrap\scss\_spinners.scss" />
+    <Content Include="Content\index\scss\bootstrap\scss\_tables.scss" />
+    <Content Include="Content\index\scss\bootstrap\scss\_toasts.scss" />
+    <Content Include="Content\index\scss\bootstrap\scss\_tooltip.scss" />
+    <Content Include="Content\index\scss\bootstrap\scss\_transitions.scss" />
+    <Content Include="Content\index\scss\bootstrap\scss\_type.scss" />
+    <Content Include="Content\index\scss\bootstrap\scss\_utilities.scss" />
+    <Content Include="Content\index\scss\bootstrap\scss\_variables.scss" />
+    <Content Include="Content\index\scss\telefon.webp" />
+    <Content Include="Content\index\telefon.webp" />
     <None Include="Scripts\jquery-3.4.1.intellisense.js" />
     <Content Include="Scripts\jquery-3.4.1.js" />
     <Content Include="Scripts\jquery-3.4.1.min.js" />
@@ -2862,10 +3035,13 @@
     <Content Include="Views\User\MyAccount.cshtml" />
     <Content Include="Views\BusinessCard\Error.cshtml" />
     <Content Include="Views\BusinessCard\QRCreate.cshtml" />
+    <Content Include="Views\User\Page404.cshtml" />
+    <Content Include="Views\Home\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
     <Folder Include="Images\" />
+    <Folder Include="Views\Error\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff2" />
@@ -2879,6 +3055,24 @@
     <None Include="packages.config" />
     <Content Include="Scripts\jquery-3.4.1.slim.min.map" />
     <Content Include="Scripts\jquery-3.4.1.min.map" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Language\Localization.cnr.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>Localization.cnr.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Language\Localization.ru.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>Localization.ru.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Language\Localization.tr.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>Localization.tr.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Language\Localization.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>Localization.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

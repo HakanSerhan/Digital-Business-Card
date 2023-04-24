@@ -43,13 +43,13 @@
 
     @using (Html.BeginForm("VerifyProfile", "User", FormMethod.Post))
     {
-        <label>Choose Password For Your Later Logins</label>
+        <label>@DigitalBusinessCard.Language.Localization.chose</label>
         @Html.TextBoxFor(x => x.Password, new { @class = "form-control" })
 
 
         @Html.HiddenFor(x => x.UserID)
 
         <br />
-        <button class="btn btn-outline-dark" style="width:100%;">Confirm</button>
+        <button class="btn btn-outline-dark" style="width:100%;">@DigitalBusinessCard.Language.Localization.confirm</button>
     }
 </div>

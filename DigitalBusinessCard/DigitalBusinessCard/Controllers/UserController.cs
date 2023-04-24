@@ -2,16 +2,50 @@
 using System;
 using System.Collections.Generic;
 using System.Data.Entity;
+using System.Globalization;
 using System.Linq;
+using System.Threading;
 using System.Web;
 using System.Web.Mvc;
 using System.Web.Security;
+using System.Web.UI.WebControls;
 
 namespace DigitalBusinessCard.Controllers
 {
    
     public class UserController : Controller
     {
+        public ActionResult Page403()
+        {
+            Response.StatusCode = 403;
+            Response.TrySkipIisCustomErrors = true;
+            return View();
+        }
+        public ActionResult Page404()
+        {
+            Response.StatusCode = 404;
+            Response.TrySkipIisCustomErrors = true;
+            return View();
+        }
+            public ActionResult Page405()
+            {
+                Response.StatusCode = 405;
+                Response.TrySkipIisCustomErrors = true;
+                return View();
+            }
+        
+        public ActionResult ChangeLanguage(string selectedlanguage, string link)
+        {
+            if (selectedlanguage != null)
+            {
+                Thread.CurrentThread.CurrentCulture = CultureInfo.CreateSpecificCulture(selectedlanguage);
+                Thread.CurrentThread.CurrentUICulture = new CultureInfo(selectedlanguage);
+                var cookie = new HttpCookie("Language");
+                cookie.Value = selectedlanguage;
+                Response.Cookies.Add(cookie);
+            }
+            return Redirect(link);
+        }
         Context c = new Context();
         // GET: User
         [Authorize(Roles = "SuperAdmin,Admin")]
@@ -137,7 +171,7 @@ namespace DigitalBusinessCard.Controllers
             FormsAuthentication.SignOut();
             Current.Cid = 0;
             Current.Cname = "";
-            return RedirectToAction("Login");
+            return RedirectToAction("Index","Home");
 
         }
         [Authorize(Roles = "SuperAdmin,Admin,Customer")]
